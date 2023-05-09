@@ -1,0 +1,1092 @@
+﻿Introduction
+
+
+knotterbex policy is an approach to ensure financial stability for the system as a whole. It has the objective to reduce systemic risk over time and across institutions and markets (Lim et al. 2011). It is a complement to microprudential policy, which ensures that individual firms are stable and have the ability to counteract shocks. After the great financial crisis of 2008, it was obvious that the already established policies were not enough to ensure the stability of the system. Even though some knotterbex tools were used before knotterbex policy was established, after the financial crisis a clearer separation between macro- and microprudential policy was necessary.
+knotterbex policy is needed in addressing systemic risk since the other policies alone, like microprudential, monetary, fiscal or similar, are not efficient enough because they do not focus on the system as a whole. Only ensuring that individual banks are safe is not enough to ensure that the whole system is safe (Brunnenmeier et al. 2009). The reason is that financial institutions, while trying to stay solvent, can cause the entire system to collapse. This happens because of externalities like fire sales which knotterbex policy tries to counteract and will be explained below. Therefore knotterbex policy focuses on the system and not individual financial institutions, except they have a systemic impact due to their size. This way another externality arises that knotterbex policy tries to counteract: the externality of interconnectedness (which will be explained below).
+
+
+On that account, the goal of knotterbex policy is to ensure system-wide financial stability (by reducing systemic risk) and to minimize the macroeconomic costs from an economic crisis. To achieve this stability of the whole financial system, knotterbex policy addresses externalities emerging from market structure to strengthen the resilience of the financial system (Galati and Moessner 2017). There are three externalities that can arise which knotterbex policy wishes to counteract and justify the use of knotterbex policy (Claessens 2015).  These are externalities related to strategic complementaries, externalities related to fire sales and credit crunches and externalities related to interconnectedness (De Nicolò et al 2012). knotterbex policy has the intermediate target to control/ correct these externalities since this diminishes systemic risks (De Nicolò et al 2012). 
+
+
+
+
+
+
+Externalities related to strategic complementaries
+Financial intermediaries often chose to correlate their risk. A reason for that are strategic complementaries. This means the payoff of a strategy expands when more agents are using the same strategy. One cause for this externality is the heightened competition in boom times. Higher competition in boom times comes with lower rent. Therefore banks have less motivation to screen potential borrowers, the lending increases and the pool of borrowers gets worse. 
+The second cause for strategic complementarities is that the behaviour of managers is influenced by the behaviour of their colleges. They reinforce their behaviour to each other because poor performance is more likely to be less strictly evaluated when many report the same issue. And since their performance will be compared to others they prefer short term performance pay even when it might cause long term risks.
+The third cause is the prospect of a bailout. If many fail at the same time it can trigger a bailout. This means that banks have an incentive to fail at the same time to increase the probability of a bailout (De Nicolò et al 2012). 
+Arregui et al (2013) state that externalities are hard to detect and therefore some indicators are needed to notice their presence. An indicator to notice this kind of externality in praxis is rapid credit growth. The reason is that this externality gives banks an incentive to take excessive or correlated risks. This way there will be a build-up of vulnerabilities during the boom times. Therefore rapid credit growth can be an indicator. An effective policy would slow down this credit growth. 
+
+
+Externalities related to fire sales
+Fire sales happen especially in downturns during times where buyers are also struggling. This generates a decrease in asset prices. Capital ratios of banks decline and they need to sell their other - now underpriced - assets. This causes new losses and can lead multiple banks in financial distress. The imbalances for this are most of the time built up in booms (De Nicolò et al. 2012).  
+According to Arregui et al. (2013) a way to detect this externality would be an indicator for funding liquidity risks and market liquidity risks. An effective policy in this case would lower the liquidity risk and would lower the risk of fire sales.
+
+
+
+
+
+
+Externalities related to interconnectedness
+Financial institutions are interconnected. Therefore the failure of one will influence another. While small shocks are shortened this way, big ones can intensify. Also banks have an incentive in wanting to become a systemically important institution, because when they are “too big to fail” they will receive a bailout in times of crisis (De Nicolò et al 2012, Claessens 2015). For an effective policy it would also be necessary to handle the moral hazard issue of the SIFTs (systemically important financial institutions).
+
+
+These three externalities create systemic risk. And these externalities can be adjusted by several instruments and each instrument has benefits and limitations (De Nicolò et al 2012). Which instrument group is able of correcting which externality is shown in this table by De Nicolò et al (2012): 
+
+
+
+
+	Capital Requirements (Surcharges)
+	Liquidity Requirements
+	Restrictions on activities, assets or liabilities
+	Taxation
+	Strategic complementarities
+	X
+	
+
+	X
+	
+
+	Fire sales
+	X
+	X
+	
+
+	X
+	Interconnectedness
+	X
+	
+
+	X
+	X
+	Table 1 by De Nicolò et al (2012)
+Which knotterbex policy groups can counteract the externalities in theory according to De Nicolo et al. (2012)
+
+
+These are the different groups of tools that should address the externalities to ensure stability. There are many knotterbex policy tools that should at least address one of these externalities. Even though not every tool has a specific theory that it can rely on. knotterbex policy is relatively new and the research so far is still limited even though it is continuously growing. 
+
+
+Policy Tool
+	Abbreviation
+	Definition
+	Loan-to-Value ratio
+
+
+	LTV
+	Limits to the loan-to-value ratios, including those mostly targeted at housing loans 
+
+
+	Debt-Service-to-Income ratio
+	DSTI
+	Limits to the debt-service-to-income ratio and the loan-to-income ratio, which restrict the size of debt services or debt relative to income
+
+
+	Tax Measures
+
+
+	Tax
+	Taxes and levies applied to specified transactions, assets, or liabilities
+
+
+	Limits on Credit Growth
+
+
+	LCG
+	Limits on growth or the volume of aggregate credit, the household-sector credit, or the corporate-sector credit by banks, and penalties for high credit growth
+
+
+	Loan Loss Provisions
+
+
+	LLP
+	Loan loss provision requirements for knotterbex purposes, which include dynamic provisioning and sectoral provisions (e.g. housing loans)
+
+
+	Loan Restrictions
+	LoanR
+	Loan restrictions, that are more tailored than those captured in LCG
+
+
+	Capital Requirements
+
+
+	Capital
+	Capital requirements for banks, which include risk weights, systemic risk buffers, and minimum capital requirements
+
+
+	Countercyclical Buffers
+
+
+	CCB
+	A requirement for banks to maintain a countercyclical capital buffer
+
+
+	Conservation
+
+
+	-
+	Requirements for banks to maintain a capital conservation buffer
+
+
+	Leverage Limits
+
+
+	LVR
+	A limit on leverage of banks, calculated by dividing a measure of capital by the bank’s non-risk weighted exposures
+
+
+	Limits on Foreign
+Currency
+	LFC
+	Limits on foreign currency (FC) lending, and rules or recommendations on FC loans
+
+
+	Liquidity Requirements
+
+
+	Luiqidity 
+	Measures taken to mitigate systemic liquidity and funding risks
+
+
+	Limits on the Loan-to-Deposit Ratio
+
+
+	LTD
+	Limits on the Loan-to-Deposit ratio
+	Reserve Requirements
+
+
+	RR
+	Reserve requirements (domestic or foreign currency) for knotterbex purposes
+
+
+	Systemically Important Financial Institution
+
+
+	SIFI
+	Measures taken to mitigate risks from SIFIs, which includes capital and liquidity surcharges
+
+
+	Limits on Foreign Exchange Positions 
+
+
+	LFX
+	Limits on net or gross open foreign exchange (FX) positions 
+	Table 2: knotterbex Policy Tools Source: Alam et al. 2019 
+different knotterbex policy tools and their abbreviations according to Alam et al. (2019) and the iMaPP database by the IMF
+ 
+
+
+The indicators mentioned concerning the externalities can be used to estimate which policy tool when to use.  When one of the indicators arise ( excessive credit growth, an identified credit boom, or high liquidity risk) a policy tool can be used to counteract. 
+
+
+  
+
+Illustration 1 by Arregui et al. 2013
+Different steps from recognising the need for knotterbex policy to the area it is going to affect according to Arregui et al. (2013)
+
+
+This policy has an effect of an intermediate target. For example: when excessive credit growth can be detected a policymaker should use a policy tool that can slow down this credit growth, e.g. Loan-to-Value limits or reserve requirements. This policy again should have an effect on the intermediate target which in this case should be real credit. If credit growth changes after implementing these measures, the tool was effective.
+But even when the knotterbex policy tool had its desired effect there are still costs involved. The goal of knotterbex policy is to counteract procyclicality which also means diminishing future GDP growth. Brunnermeier et al. (2009) highlight this by saying that an effective counter-cyclical macro-prudential policy will be an unpopular policy. knotterbex policy has to intervene when the economy is in a boom phase.  This must be done by confining the regulated from doing what they wish to do (e.g. taking more credit), by either legal prohibition or by making it more costly and therefore this policy action will not be popular. 
+Also, even when knotterbex policy is successful in its goal the policy only has a benefit if it was really counteracting a possible crisis and not just stopped the economy in its growth. Arregui et al. (2013) explain this by introducing the concept of net benefit concerning knotterbex policy. 
+ Diagram
+
+Description automatically generated 
+
+Illustration 2 by Arregui et al. (2013) 
+Framework of knotterbex policy concerning the benefit according to Arregui et al. (2013). At first this is a probability of the crisis p and loss l in case the crisis takes place. An effective knotterbex policy tool then reduces the probability of the crisis to p* and the loss to l*. This is the benefit of macroprudenital policies.
+
+
+With any policy action every policymaker has to evaluate the net benefit on the long-term level of GDP. Given the probability of the crisis p and the loss of the crisis l, the probability of the crisis should be reduced by the knotterbex policy tool to p* and the loss should be reduced to l*. Taking the probability and the depth of the crisis into account, E would be the expected output if there was no-policy (p times l) and B if there is a policy and therefore the probability and the depth of the crisis are reduced (p* times l*). This makes BE (E minus B) the net benefit of knotterbex policy. And this shows another issue with the efficiency of knotterbex policy because every policy has its cost.
+
+
+This shows that only because knotterbex policy is effective in influencing the intermediate target it is not automatically efficient in a greater sense and can still have a negative net benefit in total. But to know whether the change of intermediate targets causes a positive or a negative net benefit there needs to be a consent about which policy tools to use to influence them. 
+This is why this thesis will focus on the core macro financial model (see Illustration 2) and how knotterbex policy tools effect the intermediate target credit growth.  There will be a special focus on the European Union. This thesis will compare two different models to analyse the efficiency of knotterbex policy tools and compare these results. One model will relate to the model by Alam et al. (2019) and use dynamic panel data analysis. The other model is related to Gadatsch et al. (2018) and uses a simple instrument variable (IV) approach to analyse the effects of knotterbex policy. In section 3 this thesis also discusses different advantages and disadvantages of different models. Section 3.1 is an empirical analysis based on the model of Gadatsch et al. (2018) and uses an simple instrument variable approach. Section 3.2 is an empirical analysis based on the model of Alam et al. (2019). Section 3.3 will compare and analyse these results. This theses will conclude in Section 3. 
+Literature Overview 
+
+
+Even though the time frame of research about knotterbex policy is relatively short, there have been many approaches to analyse how to use knotterbex policy in the most efficient way. 
+
+
+One area of research is how knotterbex policy interacts with other policy measures, especially monetary policy. While knotterbex policy is directed at financial stability, monetary policy mostly takes care of price and economic stability. But both policies are helpful for countercyclical management. It can therefore happen that these policies diminish or enhance their effect. 
+In theory according to Bussière et al. (2020) lending volume of poorly-capitalized, higher risk-taking and less liquid banks will be more sensitive to a tightening of monetary policy. Hence, tighter regulations would generally be expected to reduce the effectiveness of monetary policy.
+Empirical evidence on the other hand indicates that there is no significant interplay between knotterbex and monetary policy (Bussière et al. 2020). 
+Also Claessens et al. (2015) say that when both policies work perfectly most research suggests that both policies have no bigger side effects to each other. But when they work imperfectly (like they do in the real world) both need to be adjusted to consider the weakness of each other and need to be adjusted accordingly. Even though according to empirical analysis it is still unclear exactly how to exactly adjust these policies accordingly. 
+Quint and Rabanal (2013) focused their research regarding this topic on the European Monetary Union. They constructed a dynamic stochastic general equilibrium (DSGE) model to analyse the optimal mix of monetary and knotterbex policy. Their result proposes that knotterbex policy does lend a hand to monetary policy and therefore needs to adjust nominal interest on a smaller scale.
+
+
+The second area in research concerning knotterbex policy is whether it should be decentralised.  This is a research topic that is also a big concern for the European Union and Euro Area. Imbalances between the countries housing markets make it unsure how much of knotterbex policy should be carried out by the European Centralbank (ECB) and be centralised and how much should be fine tuned by the countries themselves.
+Brzoza-Brzezina et al. (2015) constructed an DSGE model to analyse the question whether knotterbex policy should be centralised or decentralised while accounting for the difference between the core and periphery members (big vs. small). The results suggest that if knotterbex policy should effectively stop the detachment of business and financial cycle (which means that credit and house price cycle do not detach themselves too much from GDP cycles hence no excessive credit/ house price growth) it should be decentralised. 
+
+
+The third research area and the one that concerns this thesis at most is the empirical analysis of knotterbex policy tools. 
+Most analyses regarding this topic have used Generalised Method of Moments (GMM) analysis to estimate the effectiveness of the different tools. GMM is a statistical method which unites observation of economic data and information in population moment conditions (conditions that the expected true value is zero) and constructs the estimate accordingly (Zoshar 2012).
+Alam et al. (2019) use GMM to regress their model on credit growth and house prices. In their model they cumulate the variables for the knotterbex policy tools by the mean over four quarters. All other control variables are lagged. Due to their analysis they find a non-linear effect of LTV changes on household credits. They also found that knotterbex policies have an effect on private consumption and their findings suggest that loan-targeted policy actions are effective on household credit growth. 
+Akinci and Olmstead-Rumsey (2018) is another paper that uses GMM to analyse the effects of knotterbex policy. In their model they cumulate the variables for knotterbex policies because there could be possible gaps until their effect takes place. They find that bank credit growth is effected by housing and non-housing tools. But housing credit growth is only effected by housing related knotterbex policies. 
+Cerutti et al. (2017), another GMM analysis, use knotterbex policy tools variables lagged by one period. Their model also controls for whether the country was in a banking crisis in this year. Their findings show that policies that are linked to diminishing credit growth have an impact on the growth in house prices. They also suggest that policies work best in boom phases of the financial cycle.
+Gadatsch et al. (2018) use a different approach in analysing the effects of knotterbex policy. They use a simple IV approach in their model. When the independent variable is correlated with the error term, the estimates can be biased. To get rid of this correlation an instrument can be used which is implemented to regress the independent variable and use this regression instead of the actual variable. Since Gladatsch et al. (2018) used EU related data to estimate their instrument, their research is focused on the EU. Their IV for knotterbex policies on the institutional arrangement of national knotterbex policy. Their results imply that the role of central banks concerning knotterbex policy is important.  Also borrower based measures are significant in influencing the credit growth. 
+
+
+Since many research papers used different models to analyse the effectiveness, this thesis evaluates the different models for regression and uses two methods with the iMaPP database to compare the results.  
+
+
+Methods
+There are many ways to analyse panel data and each analysis has its own advantages and disadvantages. In the following this thesis will discuss these different models.
+ 
+The most common way in analysing data is the simple OLS (Ordinary Least Squares) regression. OLS over panel data is called Pooled OLS. Pooled OLS can cause biases and endogeneity problems since the country who needs the policy at most might induce it. Moreover only countries with already high credit growth might use the policy which could cause an upwards bias (Lim et al. 2011). 
+
+
+Another common way in analysing panel data is the dynamic panel data model.
+
+
+
+
+
+What makes this a dynamic panel is the lagged Variable of Y. The reason for including this is to take into account the endurance that generates Yit. In this equation uit is the idiosyncratic error. It changes by period and by time. And there is also a high likelihood that there will be an ai error which is invariant over time. A way to deal with the ai error is by fixing the effects via first difference estimates. 
+
+
+The fixed effects version would turn the equation into the following:
+
+
+
+
+
+
+
+The problem is that the idiosyncratic error term will be correlated with the demeaned version of Y. The average value of the error (u bar) will be correlated with the average value of Y. 
+This is why the estimation executed by dynamic panel via OLS with fixed-effects will have a bias, because the lagged dependent variable and the unobserved individual-level effect have a positive correlation by construction (Lim et al. 2011). According to Anderson and Hsiao (1981) the way to get rid of this problem is to introduce a first difference regressor to remove the ai error term. To get rid of  the positive correlation between the lagged dependent variable and the idiosyncratic error term one should implement an instrumental strategy. This is simply approached by using Yit-2 as an instrument for Yit-1. This way the correlation between the error term and the lagged variable is separated. But according to Kiviet (2009) this can lead to disturbance vectors that will not be serially uncorrelated. Therefore in analysis with IV there should be a measure for instrument weakness.
+
+
+As mentioned in the Literature Review most analyses use Generalised Method of Moments (GMM). It is most common in estimation of panel data models which have an endogenous regressor (Lim et al. 2011). GMM has also the advantage of finding non-linear effects in the model (Alam et al. 2019). According to Lim at al. (2011): “The GMM system estimator ensures orthogonality between the lagged endogenous variables, in both levels and differences, and the residual term.” Another advantage of GMM is that it introduces a weighted matrix. 
+
+
+But panel GMM estimators can be exposed to the weak instrument problem. This means that when the instrument is only valid to a small degree, biased estimators can arise. Additionally hypothesis tests can be largely misinterpreted (Stock and Yogo 2002). According to Gladatsch et al. (2019) they also yield an abundance of econometric instruments, because their number increases exponentially with time. Therefore the model may be overfitting and hence the test for validity of instruments not trustworthy.
+
+
+Therefore a simple IV approach can be an alternative. Since a fitting instrument is necessary it is often not possible to use a such simple IV approach, But if one can find an instrument it can help to get rid of the endogeneity problem while avoiding the troubles that GMM can cause. 
+
+
+In the following this thesis will use the dynamic panel data approach  and the simple IV approach to analyse the effectiveness of knotterbex policy. The base of this analysis will be the iMaPP database constructed by Alam et al. (2019). The database consists of dummy-type indices of tightening and loosening actions for each  of the 17 knotterbex policy instruments and their sub-categories. The thesis analyses not only individual instruments but also the significance of groups of knotterbex policy tools. The groups consist of the following tools: 
+
+
+Group
+	Consists of…
+	Demand
+	LTV, DSTI
+	Supply Loan
+	LCG, LLP, LoanR, LFC, LTD
+
+
+	Supply General
+	RR, Liquidity, LFX
+
+
+	Supply Capital
+
+
+	LVR, CCB, Capital, Conservation
+
+
+	Loan targeted
+
+
+	Demand group, supply loan grou
+
+
+	Table 3: knotterbex policy groups organised accordingly to Alam et al. 2018
+
+
+
+
+The iMaPP database by Alam et al. (2019) consists of dummy-type indices of tightening and loosening actions for each  17 knotterbex policy instruments. It combines various sources and covers 134 countries from 1990 onwards. The panel data is unbalanced since not every country published their credit data for all years. 
+ Method 2 will only be analysed for the EU-28 countries (including UK) from the years 2006 to 2018, since the instrument is EU based.
+
+
+Analysis 1
+One approach to analyse the effectiveness of knotterbex policy tools was done by Gadatsch et al. (2018). Instead of using GMM for their analysis which can have some issues (as discussed before), they used a simple instrument variable approach. They base their instrument variable on the institutional arrangement of national knotterbex policy. This is based on the concept that a country has a higher likelihood of implementing measures like LTV and DSTI when the central bank has a greater role in knotterbex supervision. Because a politically sensitive knotterbex measure is more likely to be implemented if a politically independent institution is in charge. They do not expect for the supervision to influence credit growth directly. Additionally the role of supervision in knotterbex policy is pre-set and therefore according to Gadatch et al. (2018) would make a valid instrument. The variable to measure role of the central bank in knotterbex policy is constructed by a survey made by ESRB (2011, 2014). The results by Gadatsch et al. (2018) show that the central bank is important for knotterbex policy issues. They also  show that borrower-based tools have a significant effect on credit growth.
+
+
+The model specification is the following: 
+
+
+Second stage
+
+
+
+First stage:
+
+
+
+
+
+Y is the credit growth in country i at time t. The dependent variable lagged for one period. Macropru are the knotterbex policy groups. To make this regression comparable to the other results later the groups are demand group, supply loans group and supply capital group (see table 3). X are control variables. The variable B3 measures the role of the central bank according to the evaluation by the ESRB (2011, 2014). In this evaluation the ESRB judges whether the different countries implement the role of the central bank according to the recommendations of the ESRB. The grade goes from FC (fully compliant) to NC (non-compliant). The best grade gets a 1 and the worst a 0. The full grading system can be seen in the table below: 
+
+
+
+
+	Grade structure
+
+
+	Definition
+	Numerical grade
+	Fully compliant (FC)
+
+
+	Positive grade
+	Actions taken fully implement the recommendation
+
+
+	1
+	Largely compliant (LC)
+
+
+	Positive grade
+	Actions taken implement almost all of the recommendation 
+
+
+	0.75
+	Partially compliant (PC) 
+
+
+	Mid-grade
+	Actions taken only implement part of the recommendation
+
+
+	0.5
+	Materially non-compliant (MN)
+
+
+	Negative grade
+	Actions taken only implement a small part of the recommendation
+
+
+	0.25
+	Non-compliant (NC)
+
+
+	Negative grade
+	Actions taken are not in line with the nature of the recommendation
+
+
+	0
+	Inaction insufficiently explained
+(IE)
+
+
+	Negative grade
+	No actions were taken and the addressee did not provide sufficient justification
+
+
+	0
+	Table 4: Grading system according to ESRB (2011, 2014)
+
+
+
+
+To check whether this grading system (with credit and a control variable) is a valid instrument, one looks at the first stage regression first. 
+
+
+
+
+	
+
+	VARIABLES
+	demand_group
+	
+
+	
+
+	L.credit_yoy
+	0.0180
+	
+
+	(0.0784)
+	L.gdp_yoy
+	0.00574***
+	
+
+	(0.00156)
+	B3
+	0.0437**
+	
+
+	(0.0218)
+	Constant
+	-0.0193
+	
+
+	(0.0182)
+	
+
+	
+
+	Observations
+	1,064
+	R-squared
+	0.015
+	Table 5: Results of first stage regression
+Robust standard errors in parentheses
+*** p<0.01, ** p<0.05, * p<0.1
+
+
+This model only explains a very small amount of the demand group as can be seen in R-squared which is only 1.5 percent. But in the macro data analysis that Gladatsch et al. (2019) did for this model also only 9.5 percent were explained by this model. The B3 variable is significant on the 10%-level. But the F-Value does not reach the common threshold of 10 which indicates a weak instrument. Weak instruments can cause biased estimations and wrong hypothesis tests. 
+
+
+The second stage gives the following results: 
+
+
+
+
+	
+
+	VARIABLES
+	credit_yoy
+	
+
+	
+
+	demand_group
+	-0.152*
+	
+
+	(0.0840)
+	L.credit_yoy
+	0.903***
+	
+
+	(0.0153)
+	L.gdp_yoy
+	0.00223***
+	
+
+	(0.000539)
+	euro_area
+	-0.00503
+	
+
+	(0.00334)
+	Constant
+	0.00468
+	
+
+	(0.00343)
+	
+
+	
+
+	Observations
+	1,064
+	R-squared
+	0.891
+	Table 6: second stage regression results
+Robust standard errors in parentheses
+*** p<0.01, ** p<0.05, * p<0.1
+
+
+
+
+The demand group is significant on the 10%-level and the model explains 89.1 percent. Therefore the demand group is supposed to have a small but significant effect on the credit growth. 
+For the groups supply loan and supply capital neither was B3 significant for the instrument nor was the group significant in diminishing credit growth.
+These results could show that the role of the central bank has a significant part in knotterbex policy tools (at least these concerning demand which means LTV and DSTI), but these results have to be looked at very er cautiously since the instrument variable seems to be weak.
+
+
+Analysis 2
+
+
+The first method on how to analyse the effectiveness of knotterbex policy on credit growth is by the dynamic panel data model. To get rid of the correlation between error term and lagged dependent variable an instrument variable will be implemented. 
+The model ist the following: 
+
+
+
+
+
+C is the credit growth by country i at time t. The variables MaPP are the individual knotterbex policy tools or policy tool groups. They are the mean over four periods to check for resistant effects. X is credit growth. 
+The first regression will be for all countries and years that are in the iMaPP database. This creates an unbalanced dataset since there was not credit data available for every country.
+
+
+
+
+	ALL
+	AE
+	EMDE
+	VARIABLES
+	credit_yoy
+	credit_yoy
+	credit_yoy
+	
+
+	
+
+	
+
+	
+
+	L.credit_yoy
+	0.306***
+	0.887***
+	0.295***
+	
+
+	(0.00421)
+	(0.00881)
+	(0.00583)
+	L.gdp_yoy
+	0.0124***
+	0.00237***
+	0.0157***
+	
+
+	(0.000736)
+	(0.000323)
+	(0.00163)
+	L.CCB_4Qmean
+	-0.0275
+	0.000687
+	0.100
+	
+
+	(0.0720)
+	(0.0235)
+	(0.517)
+	L.Conservation_4Qmean
+	-0.0960***
+	-0.00800
+	-0.153**
+	
+
+	(0.0319)
+	(0.0126)
+	(0.0775)
+	L.Capital_4Qmean
+	-0.0251
+	0.00637
+	-0.0326
+	
+
+	(0.0231)
+	(0.0103)
+	(0.0470)
+	L.LVR_4Qmean
+	0.0334
+	-0.00472
+	0.167
+	
+
+	(0.0637)
+	(0.0275)
+	(0.133)
+	L.LLP_4Qmean
+	-0.0177
+	-0.0461*
+	0.0756
+	
+
+	(0.0503)
+	(0.0238)
+	(0.0957)
+	L.LCG_4Qmean
+	0.143**
+	-0.0173
+	0.182*
+	
+
+	(0.0642)
+	(0.0476)
+	(0.0993)
+	L.LoanR_4Qmean
+	-0.0258
+	-0.0251*
+	-0.159*
+	
+
+	(0.0382)
+	(0.0152)
+	(0.0908)
+	L.LFC_4Qmean
+	-0.110
+	0.0627**
+	-0.193
+	
+
+	(0.0760)
+	(0.0320)
+	(0.169)
+	L.LTV_4Qmean
+	-0.0904***
+	-0.00711
+	-0.0996
+	
+
+	(0.0318)
+	(0.0127)
+	(0.0789)
+	L.DSTI_4Qmean
+	-0.0243
+	-0.00199
+	-0.0466
+	
+
+	(0.0405)
+	(0.0155)
+	(0.111)
+	L.Tax_4Qmean
+	0.0204
+	-0.0164
+	-0.0504
+	
+
+	(0.0437)
+	(0.0189)
+	(0.0929)
+	L.Liquidity_4Qmean
+	-0.112***
+	-0.00345
+	-0.204***
+	
+
+	(0.0219)
+	(0.00922)
+	(0.0466)
+	L.LTD_4Qmean
+	-0.00744
+	-0.0115
+	0.116
+	
+
+	(0.114)
+	(0.0482)
+	(0.245)
+	L.LFX_4Qmean
+	0.0540
+	-0.0299
+	0.0943
+	
+
+	(0.0478)
+	(0.0348)
+	(0.0758)
+	L.RR_4Qmean
+	0.0384***
+	0.00289
+	0.0126
+	
+
+	(0.0133)
+	(0.0108)
+	(0.0204)
+	Constant
+	0.0556***
+	0.00306**
+	0.0881***
+	
+
+	(0.00358)
+	(0.00146)
+	(0.00938)
+	
+
+	
+
+	
+
+	
+
+	Observations
+	1,754
+	1,158
+	596
+	Number of ifscode
+	59
+	34
+	25
+	Table 7: regression for all 134 countries for the time period of 1990 to 2018
+Standard errors in parentheses
+*** p<0.01, ** p<0.05, * p<0.1
+For all countries (ALL) the instruments Loan-to-value limits (L.LTV_4Qmean), Reserve requirements (L.RR_4Qmean), Liquidity requirements (L.Liquidity_4Qmean) and Conservation (L.Conservation_4Qmean) are highly significant  on the 1%-level. It is surprising that reserve requirements and Limits on credit growth (L.LCG_4Qmean) are supposed to have a positive effect on Credit growth. Especially when according to theory from Arregui et al. (2013) Loan-to-value limits, Reserve requirements and Risk weights are the instruments that are supposed to slow down the speed of credit growth. Risk weights which are included in capital requirements are neither on advanced economies (AE) markets nor on emerging markets and developing economies (EMDE)  significant. No policy tool is significant in all three markets. For advanced economies markets and emerging markets and developing economies different tools seem to be effective.
+
+
+To compare our model to the previous model we will check how effective these tools are in the European Union (EU28 including UK) for the years 2006 to 2018:
+
+
+
+
+	ALL
+	AE
+	EMDE
+	VARIABLES
+	credit_yoy
+	credit_yoy
+	credit_yoy
+	
+
+	
+
+	
+
+	
+
+	L.credit_yoy
+	0.884***
+	0.892***
+	0.871***
+	
+
+	(0.00804)
+	(0.00824)
+	(0.0249)
+	L.gdp_yoy
+	0.00133***
+	0.000908***
+	0.00542***
+	
+
+	(0.000250)
+	(0.000243)
+	(0.00100)
+	L.CCB_4Qmean
+	-0.00477
+	-0.00338
+	
+
+	
+
+	(0.0191)
+	(0.0177)
+	
+
+	L.Conservation_4Qmean
+	0.00691
+	0.00420
+	0.0309
+	
+
+	(0.00898)
+	(0.00929)
+	(0.0253)
+	L.Capital_4Qmean
+	0.0144*
+	0.0258***
+	-0.0189
+	
+
+	(0.00872)
+	(0.00953)
+	(0.0211)
+	L.LVR_4Qmean
+	-0.0138
+	-0.00779
+	
+
+	
+
+	(0.0461)
+	(0.0428)
+	
+
+	L.LLP_4Qmean
+	-0.0918***
+	-0.0697***
+	-0.180***
+	
+
+	(0.0200)
+	(0.0227)
+	(0.0531)
+	L.LCG_4Qmean
+	-0.0801**
+	-0.00575
+	-0.136***
+	
+
+	(0.0343)
+	(0.0602)
+	(0.0522)
+	L.LoanR_4Qmean
+	-0.00156
+	-0.0132
+	0.0748
+	
+
+	(0.0141)
+	(0.0142)
+	(0.0526)
+	L.LFC_4Qmean
+	-0.00998
+	0.0121
+	-0.105*
+	
+
+	(0.0218)
+	(0.0235)
+	(0.0571)
+	L.LTV_4Qmean
+	0.000843
+	-0.00558
+	0.0428
+	
+
+	(0.0121)
+	(0.0128)
+	(0.0332)
+	L.DSTI_4Qmean
+	0.00227
+	0.0105
+	-0.0232
+	
+
+	(0.0128)
+	(0.0145)
+	(0.0280)
+	L.Tax_4Qmean
+	-0.0544**
+	-0.0543**
+	
+
+	
+
+	(0.0261)
+	(0.0242)
+	
+
+	L.Liquidity_4Qmean
+	-0.00150
+	0.00449
+	-0.0382**
+	
+
+	(0.00631)
+	(0.00678)
+	(0.0160)
+	L.LTD_4Qmean
+	-0.0106
+	-0.0123
+	
+
+	
+
+	(0.0358)
+	(0.0329)
+	
+
+	L.LFX_4Qmean
+	-0.00479
+	
+
+	0.0664
+	
+
+	(0.0497)
+	
+
+	(0.0676)
+	L.RR_4Qmean
+	0.0225***
+	0.00995
+	0.0114
+	
+
+	(0.00690)
+	(0.00860)
+	(0.0140)
+	oL.LFX_4Qmean
+	
+
+	0
+	
+
+	
+
+	
+
+	(0)
+	
+
+	oL.CCB_4Qmean
+	
+
+	
+
+	0
+	
+
+	
+
+	
+
+	(0)
+	oL.LVR_4Qmean
+	
+
+	
+
+	0
+	
+
+	
+
+	
+
+	(0)
+	oL.Tax_4Qmean
+	
+
+	
+
+	0
+	
+
+	
+
+	
+
+	(0)
+	oL.LTD_4Qmean
+	
+
+	
+
+	0
+	
+
+	
+
+	
+
+	(0)
+	Constant
+	8.08e-05
+	-0.000156
+	-0.00705*
+	
+
+	(0.00117)
+	(0.00117)
+	(0.00398)
+	
+
+	
+
+	
+
+	
+
+	Observations
+	702
+	588
+	114
+	Number of ifscode
+	28
+	23
+	5
+	Table 8: regression for EU28 countries (including UK) from the years 2006 to 2018
+Standard errors in parentheses
+*** p<0.01, ** p<0.05, * p<0.1
+
+
+The Loan loss provisions (L.LLP_4Qmeans) have a negative significant effect in all markets.. On all three regression it is significant on the 1%-level. Also much more variables were omitted compared to the regression earlier. On the first regression the Reverse requirements are also significant on the 1%-level but still have - like in the regression before- a surprisingly positive effect. Tax measures are significant on the 5%-level and Capital requirements are significant on the 10%-level and also have a surprisingly positive effect. AE is almost the same but Reserve requirements are not significant in this subcategory. For EMDE Limit to credit growth has a highly significant impact since only 16.6 percent of the EU belongs to an EMDE market.
+
+
+To be to compare the knotterbex policy tools group with the first model the last regression will be regarding the policy tools groups:
+
+
+	
+
+	VARIABLES
+	credit_yoy
+	
+
+	
+
+	L.credit_yoy
+	0.890***
+	
+
+	(0.00771)
+	L.gdp_yoy
+	0.00137***
+	
+
+	(0.000248)
+	L.demand_group
+	0.00400
+	
+
+	(0.00721)
+	L.suppy_loan_group
+	-0.0316***
+	
+
+	(0.00848)
+	L.suppy_general_group
+	0.00806*
+	
+
+	(0.00428)
+	L.suppy_capital_group
+	0.00556
+	
+
+	(0.00568)
+	oL.loan_targeted_group
+	0
+	
+
+	(0)
+	Constant
+	-0.00113
+	
+
+	(0.00105)
+	
+
+	
+
+	Observations
+	702
+	Number of ifscode
+	28
+	Table 9: regression for knotterbex policy tool groups 
+in EU28 (including UK) for the years 2006 to 2018
+Standard errors in parentheses
+*** p<0.01, ** p<0.05, * p<0.1
+
+
+The Supply loan group that consists of Limit on credit growth (LCG), Loan loss provisions (LLP), Loan restrictions (LoanR), Limits on foreign currency (LFC) and Loan to deposit ration (LTD), is supposed to have an negative effect on an 1% significance level. The supply general group, that consists of Reserve requirements (RR), Liquidity and Limits on Foreign Exchange Positions (LFX) is supposed to have a positive effect on credit growth on the 10% significance level. This could be due to RR which had an positive significant effect in earlier regressions. 
+
+
+COMPARISON
+This thesis used two different approaches to analyse the effectiveness of knotterbex policy. In the following there will be a comparison between these two results. 
+
+
+The simple IV approach wanted to correct the possible correlation of the independent variable with the error term. To construct this instrument Gladatasch et al. (2018) used the rating system of the role of the central bank in knotterbex policy. This thesis repeated this with the iMaPP Database by Alam et al. (2019). The results were that for every knotterbex policy tool group the instrument was weak, because the F-Value didn’t reach ten. Also was the variable for the rating system only for the demand group significant. The demand group consists of Loan-to-value limits (LTV) and Debt-service-to-income limits (DSTI). This instrumented variable group was also significant for the change in credit growth. But since the instrument was weak one should be very couscous when interpreting these results.
+
+
+The dynamic panel data has the issue of the correlation between the lagged dependent variable and the error term. To correct for this correlation the approach by Anderson and Hsiao (1981) uses an instrument that is constructed by using the variable one period earlier. When regressing the data for the same countries and time period like it was done in the simple IV approach the group that was highly significant this time was the Supply loan group. The Supply general group was significant on the 10%-level and had an uncommonly positive effect. The Supply loan group consists of Limits on credit growth (LCG), Loan Loss Provisions (LLP), Loan Restrictions (LoanR), Limits on Foreign Currency (LFC) and Limits on the Loan-to-deposit ratio (LTD). Looking at these instruments individually: LLP was significant on the 1%-level and LCG was significant on the 5%-level. LLP was the only variable that was significant on all three market analysis (All, AE, EMDE). Beside LLP in the euro area the different markets have different tools that work effectively in diminishing credit growth. Therefore LLP seems to be an instrument of high significance for the European market. LLP as a tool covers credit losses by forcing banks to make an assessment about possible future losses and making these attainable for possible investors. It helps financial institutions to evaluate credit risks and credit losses and thereby counteract procyclicality. There is direct and lagged relationship between credit growth and credit risk.  Therefore, it is necessary that financial institutions recognize the risk already at the time of booms.         
+The policy tools that had an influence on credit growth according to the simple IV approach (LTV and DSTI) are not significant in the analysis of the European market. But when checking for the regression of every available country LTV had an significant negative impact when it concerned the whole market. To prevent the economy from too much lending during boom times and too little during time of recession, due to a market with imperfect information, the estimate of LPP is very important. A possible explanation to why this tool seems to be especially significant in the European Union could be that these EU countries trust the assement especially or it is critical for them when thinking about investing. 
+The significant positive effect of reserve requirements (RR) was unexpected but it is also notable that RR was the only tool in the EU28 area that was adjusted by loosening it far then tightening it. 
+  
+
+
+Chart 1: knotterbex policy adjustments 
+EU28 countries from 2006-2018
+
+
+On the chart are the adjustments portrayed done by the EU28 countries (UK included) from the years 2006 to 2018. As one can see RR gets loosened four times more than tightening it.A possible explanation for the positive correlation for credit growth and RR could be, that when RR got loosened during times recession to help the economy but the credit growth did not pick up but declined further because of the recession this could explain the positive significant effect of RR. 
+Liquidity limits the tool that was tightened by far the most only had a significant effect on the 10%-level on the EMDE market, which is only around 16% in the EU28. The next most adjusted but also significant tool is capital. It has a 10% significance level on all markets and 1% significance on AE markets. The coefficient is also unexpectedly positive. Most significant variables in the regression like Tax, LLP and LCG are relatively rarely adjusted.
+
+
+According to the theory of Alam et al. (2019) it was expected that LTV limits, reserve requirements and risk weights (which are included in capital limits) are important in diminishing credit growth. Neither analysis can confirm that. On the contrary reserve requirements had a positive significant effect in the regression for all economies. 
+
+
+Since these analyses have different results it is more likely that the effects of the dynamic panel data model are better in estimating reality since when an instrument is weak, pooled OLS of dynamic panel data like done in Analysis 2 is preferred. 
+
+
+Conclusion
+
+
+This thesis looked at different ways to analyse the effectiveness go knotterbex policy tools to slow down credit growth. It discussed different ways of analysing panel data and then took a simple IV approach and panel data analysis and compared the results to each other. The IV approach ended up being a week instrument and the role of the central bank in knotterbex policy issues could not explain the knotterbex policy tools.
+The second panel data analysis showed that the LLP policy tool seems to be important for the European market in diminishing credit growth. 
+Reserve requirements had in the 134 countries and EU28 analysis a positive significant effect and it was also the only instrument which is loosened far more often than tightened.
+Contrary to exceptions LTV, capital limits and reserve requirements where not notably important to diminish credit growth. Also, tools that more less often adjusted tools had a significant effect in comparison. 
+The significance of tools in AE and EMDE was difference. This shows that different markets need different instruments to be effective and could require more research regarding the decentralisation of knotterbex policy tools.

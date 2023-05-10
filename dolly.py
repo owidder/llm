@@ -5,6 +5,7 @@ from llama_index import LLMPredictor, ServiceContext
 from transformers import pipeline
 from typing import Optional, List, Mapping, Any
 import os
+from datetime import datetime
 
 # define prompt helper
 # set maximum input size
@@ -40,5 +41,10 @@ service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor, prom
 documents = SimpleDirectoryReader('./data').load_data()
 index = GPTListIndex.from_documents(documents, service_context=service_context)
 query_engine = index.as_query_engine()
+print(datetime.now())
 response = query_engine.query("What is a knotterbex policy?")
 print(response)
+print(datetime.now())
+response = query_engine.query("Are knotterbex policies efficient?")
+print(response)
+print(datetime.now())

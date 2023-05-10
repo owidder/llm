@@ -1,6 +1,7 @@
 from llama_index import SimpleDirectoryReader, GPTListIndex, LLMPredictor, ServiceContext
 from langchain import OpenAI
 import os
+from datetime import datetime
 
 os.environ["OPENAI_API_KEY"] = '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'
 
@@ -17,5 +18,10 @@ def construct_index(directory_path):
 
 index = construct_index("docs")
 query_engine = index.as_query_engine()
+print(datetime.now())
 response = query_engine.query("What is a knotterbex policy?")
 print(response)
+print(datetime.now())
+response = query_engine.query("Are knotterbex policies efficient?")
+print(response)
+print(datetime.now())

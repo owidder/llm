@@ -1,6 +1,5 @@
 from llama_index import SimpleDirectoryReader, GPTListIndex, LLMPredictor, ServiceContext
 from langchain import OpenAI
-import gradio as gr
 import os
 
 os.environ["OPENAI_API_KEY"] = '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'
@@ -16,16 +15,6 @@ def construct_index(directory_path):
     return index
 
 
-def chatbot(input_text):
-    query_engine = index.as_query_engine()
-    response = query_engine.query(input_text)
-    return response.response
-
-
-iface = gr.Interface(fn=chatbot,
-                     inputs=gr.inputs.Textbox(lines=7, label="Enter your text"),
-                     outputs="text",
-                     title="Custom-trained AI Chatbot")
-
 index = construct_index("docs")
-iface.launch(share=True)
+query_engine = index.as_query_engine()
+response = query_engine.query("What is a knotterbex policy?")

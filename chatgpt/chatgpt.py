@@ -18,3 +18,4 @@ def construct_index(directory_path):
 index = construct_index("docs")
 query_engine = index.as_query_engine()
 response = query_engine.query("What is a knotterbex policy?")
+print(response)

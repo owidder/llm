@@ -7,13 +7,13 @@
 - name: 'Download anaconda distro'
   ansible.builtin.get_url:
     url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
-    dest: '~/'
+    dest: '/tmp'
 
 - name: 'Make distro executable'
   ansible.builtin.file:
-    path: '~/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
+    path: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     mode: 'u+x'
 
 - name: 'Run anaconda distro'
   become: true
-  ansible.builtin.command: '~/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'
+  ansible.builtin.command: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'

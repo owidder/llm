@@ -3,8 +3,6 @@ from langchain import OpenAI
 import os
 from datetime import datetime
 
-os.environ["OPENAI_API_KEY"] = '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'
-
 
 def construct_index(directory_path):
     num_outputs = 512

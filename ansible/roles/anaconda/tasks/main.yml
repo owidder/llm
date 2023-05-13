@@ -1,0 +1,18 @@
+---
+- name: 'Ensure required facts are gathered'
+  ansible.builtin.setup:
+    gather_subset:
+      - 'architecture'
+
+- name: 'Download anaconda distro'
+  ansible.builtin.get_url:
+    url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
+    dest: '~/'
+
+- name: 'Make distro executable'
+  ansible.builtin.file:
+    path: '~/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
+    mode: 'u+x'
+
+- name: 'Run anaconda distro'
+  ansible.builtin.command: '~/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'

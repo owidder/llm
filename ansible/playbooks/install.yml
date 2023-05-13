@@ -1,0 +1,6 @@
+---
+- name: 'Install all needed software'
+  hosts: 'localhost'
+
+  roles:
+    - 'anaconda'

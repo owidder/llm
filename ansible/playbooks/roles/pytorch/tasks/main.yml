@@ -1,6 +1,6 @@
 ---
 - name: 'Clone pytorch repo'
   ansible.builtin.git:
-    repo: 'git@github.com:owidder/llm.git'
-    dest: '~/llm'
+    repo: 'git@github.com:pytorch/pytorch.git'
+    dest: '~/pytorch'
 

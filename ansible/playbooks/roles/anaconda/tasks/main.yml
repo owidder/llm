@@ -15,4 +15,5 @@
     mode: 'u+x'
 
 - name: 'Run anaconda distro'
+  become: true
   ansible.builtin.command: '~/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'

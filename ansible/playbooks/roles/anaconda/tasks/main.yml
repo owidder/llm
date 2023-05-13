@@ -18,5 +18,5 @@
 
 - name: 'Run anaconda distro'
   become: true
-  ansible.builtin.command: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'
+  ansible.builtin.command: 'bash /tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'
   when: anaconda_distro.changed

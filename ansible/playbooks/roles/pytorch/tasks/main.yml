@@ -4,3 +4,14 @@
     repo: 'git@github.com:pytorch/pytorch.git'
     dest: '~/pytorch'
 
+- name: 'Create conda environment'
+  ansible.builtin.command: 'conda create -y --name build-pytorch'
+
+- name: 'Activate conda environment'
+  ansible.builtin.command: 'conda activate build-pytorch'
+
+- name: 'Install mkl'
+  ansible.builtin.command: 'conda install mkl mkl-include'
+
+- name: 'Install cuda'
+  ansible.builtin.command: 'conda install -c pytorch magma-cuda110'

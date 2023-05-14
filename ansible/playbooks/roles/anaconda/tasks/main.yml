@@ -27,6 +27,9 @@
     owner: ubuntu
     mode: 755
     recurse: yes
+  tags:
+    - anaconda
+    - anaconda-install
 
 - name: 'Run anaconda distro'
   ansible.builtin.shell: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u -p /opt/anaconda3'

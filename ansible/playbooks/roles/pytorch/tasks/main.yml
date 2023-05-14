@@ -3,15 +3,33 @@
   ansible.builtin.git:
     repo: 'git@github.com:pytorch/pytorch.git'
     dest: '~/pytorch'
+  tags:
+    - pytorch
 
 - name: 'Create conda environment'
-  shell: 'conda create -y --name build-pytorch'
+  shell: 'source /etc/profile && conda create -y --name build-pytorch'
+  args:
+     executable: /bin/bash
+  tags:
+    - pytorch
 
 - name: 'Activate conda environment'
-  shell: 'conda activate build-pytorch'
+  shell: 'source /etc/profile && conda activate build-pytorch'
+  args:
+     executable: /bin/bash
+  tags:
+    - pytorch
 
 - name: 'Install mkl'
-  shell: 'conda install mkl mkl-include'
+  shell: 'source /etc/profile && conda install mkl mkl-include'
+  args:
+     executable: /bin/bash
+  tags:
+    - pytorch
 
 - name: 'Install cuda'
-  shell: 'conda install -c pytorch magma-cuda110'
+  shell: 'source /etc/profile && conda install -c pytorch magma-cuda110'
+  args:
+     executable: /bin/bash
+  tags:
+    - pytorch

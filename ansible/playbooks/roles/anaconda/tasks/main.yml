@@ -64,8 +64,3 @@
   tags:
     - anaconda
     - anaconda-install
-
-- name: 'source /etc/profile'
-  shell: source /etc/profile
-  args:
-     executable: /bin/bash

@@ -3,20 +3,33 @@
   ansible.builtin.setup:
     gather_subset:
       - 'architecture'
+  tags:
+    - anaconda
+    - anaconda-download
+    - anaconda-install
 
 - name: 'Download anaconda distro'
   ansible.builtin.get_url:
     url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     dest: '/tmp'
   register: anaconda_distro
+  tags:
+    - anaconda
+    - anaconda-download
 
 - name: 'Make distro executable'
   ansible.builtin.file:
     path: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     mode: 'u+x'
   when: anaconda_distro.changed
+  tags:
+    - anaconda
+    - anaconda-install
 
 - name: 'Run anaconda distro'
   become: true
   ansible.builtin.command: 'bash /tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'
   when: anaconda_distro.changed
+  tags:
+    - anaconda
+    - anaconda-install

@@ -13,22 +13,16 @@
   tags:
     - pytorch
 
-- name: 'Activate conda environment'
-  shell: 'source /etc/profile && conda activate build-pytorch'
-  args:
-     executable: /bin/bash
-  tags:
-    - pytorch
-
-- name: 'Install mkl'
-  shell: 'source /etc/profile && conda install mkl mkl-include'
-  args:
-     executable: /bin/bash
-  tags:
-    - pytorch
-
-- name: 'Install cuda'
-  shell: 'source /etc/profile && conda install -c pytorch magma-cuda110'
+- name: 'Install pytorch'
+  shell: >
+    cd ~/pytorch && 
+    source /etc/profile && 
+    conda activate build-pytorch && 
+    conda install cmake ninja && 
+    pip install -r requirements.txt && 
+    conda install mkl mkl-include &&
+    conda install -c pytorch magma-cuda110 &&
+    make triton
   args:
      executable: /bin/bash
   tags:

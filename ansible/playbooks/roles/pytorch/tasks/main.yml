@@ -16,7 +16,8 @@
 - name: 'Install pytorch'
   shell: >
     cd ~/pytorch && 
-    source /etc/profile && 
+    source /etc/profile &&
+    conda init bash &&
     conda activate build-pytorch && 
     conda install cmake ninja && 
     pip install -r requirements.txt && 

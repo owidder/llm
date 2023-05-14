@@ -12,24 +12,52 @@
   ansible.builtin.get_url:
     url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     dest: '/tmp'
+    checksum: '{{ anaconda_sha }}'
+    mode: '0550'
   register: anaconda_distro
   tags:
     - anaconda
     - anaconda-download
 
-- name: 'Make distro executable'
+- name: 'Create conda folder'
+  become: True
   ansible.builtin.file:
-    path: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
-    mode: 'u+x'
+    path: /opt/anaconda3
+    state: directory
+    owner: ubuntu
+    mode: 755
+    recurse: yes
+
+- name: 'Run anaconda distro'
+  ansible.builtin.shell: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u -p /opt/anaconda3'
   when: anaconda_distro.changed
   tags:
     - anaconda
-    - anaconda-download
     - anaconda-install
 
-- name: 'Run anaconda distro'
-  ansible.builtin.command: 'bash /tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'
-  when: anaconda_distro.changed
+- name: 'Add anaconda bin to path'
+  become: True
+  shell: echo 'export PATH=/opt/anaconda3/bin:$PATH' >> /etc/profile
+  tags:
+    - anaconda
+    - anaconda-install
+
+- name: 'conda - read permission for all'
+  become: True
+  file:
+    path: /opt/anaconda3
+    mode: +r
+    recurse: yes
+  tags:
+    - anaconda
+    - anaconda-install
+
+- name: 'conda - execution permission for all'
+  become: True
+  file:
+    path: /opt/anaconda3/bin
+    mode: +x
+    recurse: yes
   tags:
     - anaconda
     - anaconda-install

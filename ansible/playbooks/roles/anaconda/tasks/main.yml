@@ -9,6 +9,7 @@
     - anaconda-install
 
 - name: 'Download anaconda distro'
+  become_user: ubuntu
   ansible.builtin.get_url:
     url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     dest: '/tmp'
@@ -18,6 +19,7 @@
     - anaconda-download
 
 - name: 'Make distro executable'
+  become_user: ubuntu
   ansible.builtin.file:
     path: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     mode: 'u+x'
@@ -28,7 +30,7 @@
     - anaconda-install
 
 - name: 'Run anaconda distro'
-  become: true
+  become_user: ubuntu
   ansible.builtin.command: 'bash /tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u'
   when: anaconda_distro.changed
   tags:

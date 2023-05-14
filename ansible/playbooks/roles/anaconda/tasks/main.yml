@@ -24,6 +24,7 @@
   when: anaconda_distro.changed
   tags:
     - anaconda
+    - anaconda-download
     - anaconda-install
 
 - name: 'Run anaconda distro'

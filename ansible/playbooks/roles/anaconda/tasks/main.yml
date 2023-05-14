@@ -1,6 +1,6 @@
 ---
 - name: 'Ensure required facts are gathered'
-  ansible.builtin.setup:
+  setup:
     gather_subset:
       - 'architecture'
   tags:
@@ -9,7 +9,7 @@
     - anaconda-install
 
 - name: 'Download anaconda distro'
-  ansible.builtin.get_url:
+  get_url:
     url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     dest: '/tmp'
     checksum: '{{ anaconda_sha }}'
@@ -21,7 +21,7 @@
 
 - name: 'Create conda folder'
   become: True
-  ansible.builtin.file:
+  file:
     path: /opt/anaconda3
     state: directory
     owner: ubuntu
@@ -32,7 +32,7 @@
     - anaconda-install
 
 - name: 'Run anaconda distro'
-  ansible.builtin.shell: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u -p /opt/anaconda3'
+  shell: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u -p /opt/anaconda3'
   when: anaconda_distro.changed
   tags:
     - anaconda
@@ -64,3 +64,8 @@
   tags:
     - anaconda
     - anaconda-install
+
+- name: 'source /etc/profile'
+  shell: source /etc/profile
+  args:
+     executable: /bin/bash

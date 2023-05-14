@@ -13,7 +13,7 @@
     url: 'https://repo.anaconda.com/archive/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh'
     dest: '/tmp'
     checksum: '{{ anaconda_sha }}'
-    mode: '0550'
+    mode: '0750'
   register: anaconda_distro
   tags:
     - anaconda

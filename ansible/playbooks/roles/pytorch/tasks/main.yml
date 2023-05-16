@@ -5,6 +5,7 @@
     dest: '~/pytorch'
   tags:
     - pytorch
+    - pytorch-clone
 
 - name: 'Create conda environment'
   shell: 'conda create -y --name build-pytorch'

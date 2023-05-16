@@ -1,0 +1,3 @@
+Externalities related to fire sales
+Fire sales happen especially in downturns during times where buyers are also struggling. This generates a decrease in asset prices. Capital ratios of banks decline and they need to sell their other - now underpriced - assets. This causes new losses and can lead multiple banks in financial distress. The imbalances for this are most of the time built up in booms (De Nicolò et al. 2012).
+According to Arregui et al. (2013) a way to detect this externality would be an indicator for funding liquidity risks and market liquidity risks. An effective policy in this case would lower the liquidity risk and would lower the risk of fire sales.

@@ -7,14 +7,14 @@
     - pytorch
 
 - name: 'Create conda environment'
-  shell: 'source /etc/profile && conda create -y --name build-pytorch'
+  shell: 'conda create -y --name build-pytorch'
   args:
      executable: /bin/bash
   tags:
     - pytorch
 
 - name: 'init conda'
-  shell: 'source /etc/profile && conda init bash'
+  shell: 'conda init bash'
   args:
      executable: /bin/bash
   tags:

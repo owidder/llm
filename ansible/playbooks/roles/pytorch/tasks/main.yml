@@ -13,6 +13,7 @@
      executable: /bin/bash
   tags:
     - pytorch
+    - pytorch-create-env
 
 - name: 'init conda'
   shell: 'conda init bash'

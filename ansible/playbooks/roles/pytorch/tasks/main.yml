@@ -34,3 +34,4 @@
      executable: /bin/bash
   tags:
     - pytorch
+    - pytorch-install

@@ -29,7 +29,9 @@
     pip install -r requirements.txt && 
     conda install mkl mkl-include &&
     conda install -c pytorch magma-cuda110 &&
-    make triton
+    make triton &&
+    export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"} &&
+    python setup.py develop
   args:
      executable: /bin/bash
   tags:

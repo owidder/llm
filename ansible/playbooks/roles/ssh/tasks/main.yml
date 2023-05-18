@@ -1,0 +1,23 @@
+---
+- name: 'create ssh keys'
+  shell: 'ssh-keygen -t ed25519 -C "remote@remote_server" -N "" -f ~/.ssh/id_ed25519'
+  register: ssh_keys
+  tags:
+    - ssh
+    - ssh-create-key
+
+- name: 'show public key'
+  shell: 'cat ~/.ssh/id_ed25519.pub'
+  when: ssh_keys.changed
+  register: ssh_public_key
+  tags:
+    - ssh
+    - ssh-show-key
+
+- name: 'show output'
+  debug:
+    msg: '{{ ssh_public_key.stdout }}'
+  when: ssh_keys.changed
+  tags:
+    - ssh
+    - ssh-show-key

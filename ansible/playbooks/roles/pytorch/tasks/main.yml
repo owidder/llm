@@ -1,37 +1,53 @@
 ---
 - name: 'Clone pytorch repo'
   ansible.builtin.git:
-    repo: 'git@github.com:pytorch/pytorch.git'
+    repo: 'https://github.com/pytorch/pytorch.git'
     dest: '~/pytorch'
   tags:
     - pytorch
     - pytorch-clone
 
 - name: 'Create conda environment'
-  shell: 'conda create -y --name build-pytorch'
+  shell: 'source /etc/profile && conda create -y --name build-pytorch'
   args:
      executable: /bin/bash
   tags:
     - pytorch
     - pytorch-create-env
 
-- name: 'init conda'
-  shell: 'conda init bash'
+#- name: 'init conda'
+#  shell: 'source /etc/profile && conda init bash'
+#  args:
+#     executable: /bin/bash
+#  tags:
+#    - pytorch
+#    - pytorch-create-env
+
+- name: 'install dependencies for pytorch'
+  shell: >
+    source /etc/profile && 
+    source /opt/anaconda3/etc/profile.d/conda.sh &&
+    conda activate build-pytorch &&
+    cd ~/pytorch && 
+    conda install -y cmake ninja > ~/pytorch.out && 
+    pip install -r requirements.txt && 
+    conda install -y mkl mkl-include > ~/pytorch.out &&
+    conda install -y -c pytorch magma-cuda110 > ~/pytorch.out &&
+    make triton
   args:
      executable: /bin/bash
   tags:
     - pytorch
+    - pytorch-install
 
 - name: 'Install pytorch'
   shell: >
+    source /etc/profile && 
+    source /opt/anaconda3/etc/profile.d/conda.sh &&
+    conda activate build-pytorch &&
     cd ~/pytorch && 
-    conda install cmake ninja && 
-    pip install -r requirements.txt && 
-    conda install mkl mkl-include &&
-    conda install -c pytorch magma-cuda110 &&
-    make triton &&
     export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"} &&
-    python setup.py develop
+    python setup.py develop > ~/pytorch.out
   args:
      executable: /bin/bash
   tags:

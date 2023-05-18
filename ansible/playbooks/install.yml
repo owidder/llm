@@ -1,7 +1,10 @@
 ---
 - name: 'Install all needed software'
-  hosts: 'localhost'
+  hosts: 'remote_server'
 
   roles:
-    - 'anaconda'
-    - 'pytorch'
+    - role: 'ssh'
+      tags:
+        - 'never'
+    - role: 'anaconda'
+    - role: 'pytorch'

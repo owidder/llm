@@ -8,7 +8,7 @@
     - pytorch-clone
 
 - name: 'Create conda environment'
-  shell: 'source /etc/profile && conda create -y --name build-pytorch'
+  shell: 'source /etc/profile && conda create -y --name build-pytorch > ~/install_remote_server.out'
   args:
      executable: /bin/bash
   tags:
@@ -29,10 +29,10 @@
     source /opt/anaconda3/etc/profile.d/conda.sh &&
     conda activate build-pytorch &&
     cd ~/pytorch && 
-    conda install -y cmake ninja > ~/pytorch.out && 
+    conda install -y cmake ninja > ~/install_remote_server.out && 
     pip install -r requirements.txt && 
-    conda install -y mkl mkl-include > ~/pytorch.out &&
-    conda install -y -c pytorch magma-cuda110 > ~/pytorch.out &&
+    conda install -y mkl mkl-include > ~/install_remote_server.out &&
+    conda install -y -c pytorch magma-cuda110 > ~/install_remote_server.out &&
     make triton
   args:
      executable: /bin/bash
@@ -47,7 +47,7 @@
     conda activate build-pytorch &&
     cd ~/pytorch && 
     export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"} &&
-    python setup.py develop > ~/pytorch.out
+    python setup.py develop > ~/install_remote_server.out
   args:
      executable: /bin/bash
   tags:

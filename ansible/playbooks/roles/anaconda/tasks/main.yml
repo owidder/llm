@@ -32,7 +32,7 @@
     - anaconda-install
 
 - name: 'Run anaconda distro'
-  shell: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u -p /opt/anaconda3'
+  shell: '/tmp/Anaconda3-{{anaconda_version }}-Linux-{{ ansible_architecture }}.sh -b -u -p /opt/anaconda3 > ~/install_remote_server.out'
   when: anaconda_distro.changed
   tags:
     - anaconda

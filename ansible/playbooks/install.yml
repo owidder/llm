@@ -3,8 +3,6 @@
   hosts: 'remote_server'
 
   roles:
-    - role: 'ssh'
-      tags:
-        - 'never'
     - role: 'anaconda'
     - role: 'pytorch'
+    - role: 'ssh'

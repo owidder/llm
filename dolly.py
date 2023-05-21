@@ -1,6 +1,6 @@
 import torch
 from langchain.llms.base import LLM
-from llama_index import SimpleDirectoryReader, LangchainEmbedding, GPTListIndex, PromptHelper
+from llama_index import SimpleDirectoryReader, GPTListIndex, PromptHelper
 from llama_index import LLMPredictor, ServiceContext
 from transformers import pipeline
 from typing import Optional, List, Mapping, Any

@@ -20,6 +20,7 @@ class CustomLLM(LLM):
     model_name = "databricks/dolly-v2-12b"
     #model_name = "s-JoL/Open-Llama-V1"
     #model_name = "decapoda-research/llama-30b-hf"
+    #model_name = "google/flan-ul2"
     pipeline = pipeline("text-generation", model=model_name, device="cuda:0", model_kwargs={"torch_dtype":torch.bfloat16}, trust_remote_code=True)
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:

@@ -5,4 +5,5 @@
   roles:
     - role: 'anaconda'
     - role: 'pytorch'
+    - role: 'llm'
     - role: 'ssh'

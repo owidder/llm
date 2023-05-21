@@ -1,0 +1,17 @@
+---
+- name: 'Clone llm repo'
+  ansible.builtin.git:
+    repo: 'https://github.com/owidder/llm.git'
+    dest: '~/llm'
+  tags:
+    - llm
+    - llm-clone
+
+- name: 'install llm dependencies'
+  shell: '/opt/anaconda3/envs/build-pytorch/bin/pip install -r requirements.txt'
+  args:
+     executable: /bin/bash
+     chdir: '~/llm'
+  tags:
+    - llm
+    - llm-dependencies

@@ -1,5 +1,0 @@
-Externalities related to interconnectedness
-Financial institutions are interconnected. Therefore the failure of one will influence another. While small shocks are shortened this way, big ones can intensify. Also banks have an incentive in wanting to become a systemically important institution, because when they are “too big to fail” they will receive a bailout in times of crisis (De Nicolò et al 2012, Claessens 2015). For an effective policy it would also be necessary to handle the moral hazard issue of the SIFTs (systemically important financial institutions).
-
-
-These three externalities create systemic risk. And these externalities can be adjusted by several instruments and each instrument has benefits and limitations (De Nicolò et al 2012). Which instrument group is able of correcting which externality is shown in this table by De Nicolò et al (2012):

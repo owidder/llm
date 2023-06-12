@@ -89,9 +89,13 @@ User: {query}
 
 
 documents = read_files("./docs")
-chat_agent = ChatAgent(documents=documents, name="Dave", enable_smalltalk=True)
+chat_agent = ChatAgent(documents=documents, name="Dave", enable_smalltalk=False)
 
-while True:
-    user_message = input("Your message: ")
-    agent_message = chat_agent.answer(query=user_message)
-    print(f"Agent message: {agent_message}")
+agent_message = chat_agent.answer(query="What is a knotterbex policy?")
+print(f"Agent message: {agent_message}")
+
+agent_message = chat_agent.answer(query="Is it efficient?")
+print(f"Agent message: {agent_message}")
+
+agent_message = chat_agent.answer(query="How does it interact with other policy measures?")
+print(f"Agent message: {agent_message}")

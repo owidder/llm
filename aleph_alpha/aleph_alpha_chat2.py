@@ -88,14 +88,14 @@ User: {query}
         return reply
 
 
-documents = read_files("./knotterbex")
+documents = read_files("./fake-poem")
 chat_agent = ChatAgent(documents=documents, name="Dave", enable_smalltalk=False)
 
-agent_message = chat_agent.answer(query="What is a knotterbex policy?")
+agent_message = chat_agent.answer(query="Who is Ella Maria Tully?")
 print(f"Agent message: {agent_message}")
 
-agent_message = chat_agent.answer(query="Is it efficient?")
+agent_message = chat_agent.answer(query="Who wrote the poem 'My car is faster than yours'?")
 print(f"Agent message: {agent_message}")
 
-agent_message = chat_agent.answer(query="How does it interact with other policy measures?")
+agent_message = chat_agent.answer(query="What is the rhyme scheme?")
 print(f"Agent message: {agent_message}")

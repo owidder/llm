@@ -1,6 +1,6 @@
 import os
 from typing import List
-from aleph_alpha_client import Client, CompletionRequest, Document, Prompt, QaRequest
+from aleph_alpha_client import Client, Document, QaRequest
 
 client = Client(token=os.getenv("AA_TOKEN"))
 
@@ -14,62 +14,9 @@ def read_files(directory):
     return files_content
 
 
-class ChatMemory:
-    def __init__(self):
-        self.user_messages = []
-        self.agent_messages = []
-
-    def memorize_user_message(self, msg: str):
-        self.user_messages.append(msg)
-
-    def memorize_agent_message(self, msg: str):
-        self.agent_messages.append(msg)
-
-    # this function takes the entire memory (itself) and returns it as a string
-    def get_as_string(self, user_prefix: str, agent_prefix: str):
-        user_strings = (f"{user_prefix}: {msg}" for msg in self.user_messages)
-        agent_strings = (f"{agent_prefix}: {msg}" for msg in self.agent_messages)
-        return "\n".join([f"{x}\n{y}" for x, y in zip(user_strings, agent_strings)])
-
-
 class ChatAgent:
-    def __init__(
-        self,
-        documents: List[str],
-        name: str,
-        enable_smalltalk: bool = True,
-    ):
+    def __init__(self, documents: List[str]):
         self.document_base = documents
-        self.name = name
-        self.enable_smalltalk = enable_smalltalk
-        self.memory = ChatMemory()
-
-    def answer_smalltalk(self, query: str):
-        if not self.enable_smalltalk:
-            return "Sorry, I cannot answer your question based on the available documents."
-
-        # building the prompt based on the prior conversation, a description of the chat agent and the most recent user query
-        # this prompt will then be sent to our complete endpoint to generate a smalltalk response
-        prompt = (
-            f"""A chat agent called {self.name} is helping a user navigate the world of sports knowledge.
-{self.name}: Hello, I'm {self.name}, your sports information agent."""
-            + self.memory.get_as_string(agent_prefix="{self.name}", user_prefix="User")
-            + f"""
-User: {query}
-{self.name}:"""
-            )
-        params = {
-            "prompt": Prompt.from_text(prompt),
-            "maximum_tokens": 64,
-            "stop_sequences": ["\n"],
-        }
-        request = CompletionRequest(**params)
-        response = client.complete(request=request, model="luminous-supreme")
-        return response.completions[0].completion.strip()
-
-    def memorize(self, query: str, reply: str):
-        self.memory.memorize_user_message(msg=query)
-        self.memory.memorize_agent_message(msg=reply)
 
     def answer(self, query: str):
         params = {
@@ -83,19 +30,15 @@ User: {query}
         if response.answers:
             reply = response.answers[0].answer.strip()
         else:
-            reply = self.answer_smalltalk(query=query)
-        self.memorize(query=query, reply=reply)
+            reply = "Sorry, I cannot answer your question based on the available documents."
         return reply
 
 
-documents = read_files("./fake-poem")
-chat_agent = ChatAgent(documents=documents, name="Dave", enable_smalltalk=False)
+documents = read_files(os.getenv("DOCUMENTS_DIR"))
+chat_agent = ChatAgent(documents=documents)
 
-agent_message = chat_agent.answer(query="Who is Ella Maria Tully?")
-print(f"Agent message: {agent_message}")
+questions = os.getenv("QUESTIONS").split(";")
 
-agent_message = chat_agent.answer(query="Who wrote the poem 'My car is faster than yours'?")
-print(f"Agent message: {agent_message}")
-
-agent_message = chat_agent.answer(query="What is the rhyme scheme?")
-print(f"Agent message: {agent_message}")
+for question in questions:
+    agent_message = chat_agent.answer(query=question)
+    print(f"Q: {question}\nA: {agent_message}\n")

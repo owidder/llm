@@ -17,7 +17,8 @@ max_chunk_overlap = 20
 prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 
 class CustomLLM(LLM):
-    model_name = "databricks/dolly-v2-12b"
+    model_name = "jeffwan/vicuna-13b"
+    #model_name = "databricks/dolly-v2-12b"
     #model_name = "s-JoL/Open-Llama-V1"
     #model_name = "decapoda-research/llama-30b-hf"
     #model_name = "google/flan-ul2"

@@ -138,7 +138,7 @@ def translate_polls(folder_path: str):
           translated_poll = dict(poll).copy()
           translated_poll["heading"] = heading_translations
           with open(file_abs_path, "w", encoding='utf8') as f:
-            json.dump(translated_poll, f, ensure_ascii=False)
+            json.dump(translated_poll, f, ensure_ascii=False, indent=2)
 
 
 translate_polls("./i18n/polls")

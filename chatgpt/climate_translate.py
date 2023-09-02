@@ -142,6 +142,7 @@ def translate_polls(folder_path: str):
           poll = json.load(f)
           translated_poll = dict(poll).copy()
           translated_poll["heading"] = translate_dict(poll["heading"])
+          translated_poll["description"] = translate_dict(poll["description"])
 
         with open(file_abs_path, "w", encoding='utf8') as f:
           json.dump(translated_poll, f, ensure_ascii=False, indent=2)

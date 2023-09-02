@@ -127,19 +127,22 @@ def translate_in_all_languages(source_text: str, existing_translations: dict) ->
   return translations
 
 
+def translate_dict(dict_to_translate: dict) -> dict:
+  source_text = dict_to_translate["de"]
+  translations = translate_in_all_languages(source_text=source_text, existing_translations=dict_to_translate)
+  ordered_translations = collections.OrderedDict(sorted(translations.items()))
+  return ordered_translations
+
+
 def translate_polls(folder_path: str):
   for subdir, dirs, files in os.walk(folder_path):
       for file in files:
         file_abs_path = subdir + os.path.sep + file
         with open(file_abs_path, "r") as f:
           poll = json.load(f)
-          source_text = poll["heading"]["de"]
-          heading_translations = translate_in_all_languages(source_text=source_text, existing_translations=poll["heading"])
+          translated_poll = dict(poll).copy()
+          translated_poll["heading"] = translate_dict(poll["heading"])
 
-        ordered_heading_translations = collections.OrderedDict(sorted(heading_translations.items()))
-
-        translated_poll = dict(poll).copy()
-        translated_poll["heading"] = ordered_heading_translations
         with open(file_abs_path, "w", encoding='utf8') as f:
           json.dump(translated_poll, f, ensure_ascii=False, indent=2)
 

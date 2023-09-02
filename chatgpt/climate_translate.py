@@ -130,19 +130,18 @@ def translate_in_all_languages(source_text: str, existing_translations: dict) ->
 def translate_polls(folder_path: str):
   for subdir, dirs, files in os.walk(folder_path):
       for file in files:
-        if not file.endswith("translated.json"):
-          file_abs_path = subdir + os.path.sep + file
-          with open(file_abs_path, "r") as f:
-            poll = json.load(f)
-            source_text = poll["heading"]["de"]
-            heading_translations = translate_in_all_languages(source_text=source_text, existing_translations=poll["heading"])
+        file_abs_path = subdir + os.path.sep + file
+        with open(file_abs_path, "r") as f:
+          poll = json.load(f)
+          source_text = poll["heading"]["de"]
+          heading_translations = translate_in_all_languages(source_text=source_text, existing_translations=poll["heading"])
 
-          ordered_heading_translations = collections.OrderedDict(sorted(heading_translations.items()))
+        ordered_heading_translations = collections.OrderedDict(sorted(heading_translations.items()))
 
-          translated_poll = dict(poll).copy()
-          translated_poll["heading"] = ordered_heading_translations
-          with open(file_abs_path, "w", encoding='utf8') as f:
-            json.dump(translated_poll, f, ensure_ascii=False, indent=2)
+        translated_poll = dict(poll).copy()
+        translated_poll["heading"] = ordered_heading_translations
+        with open(file_abs_path, "w", encoding='utf8') as f:
+          json.dump(translated_poll, f, ensure_ascii=False, indent=2)
 
 
 translate_polls("./i18n/polls")

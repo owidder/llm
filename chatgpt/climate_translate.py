@@ -135,7 +135,6 @@ def translate_polls(folder_path: str):
             source_text = poll["heading"]["de"]
             heading_translations = translate_in_all_languages(source_text=source_text, existing_translations=poll["heading"])
 
-          translated_file_abs_path = f"{'.'.join(file_abs_path.split('.')[0:-1])}.translated.json"
           translated_poll = dict(poll).copy()
           translated_poll["heading"] = heading_translations
           with open(file_abs_path, "w", encoding='utf8') as f:

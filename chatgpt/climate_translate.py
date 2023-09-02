@@ -1,6 +1,7 @@
 import os
 import json
 import openai
+import collections
 
 SOURCE_LANGUAGE = "German"
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -80,7 +81,7 @@ LANGUAGES = {
 
 def translate_text(text: str, source_language: str, target_language: str) -> str:
   response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
+    model="gpt-4",
     messages=[
       {
         "role": "system",
@@ -136,8 +137,10 @@ def translate_polls(folder_path: str):
             source_text = poll["heading"]["de"]
             heading_translations = translate_in_all_languages(source_text=source_text, existing_translations=poll["heading"])
 
+          ordered_heading_translations = collections.OrderedDict(sorted(heading_translations.items()))
+
           translated_poll = dict(poll).copy()
-          translated_poll["heading"] = heading_translations
+          translated_poll["heading"] = ordered_heading_translations
           with open(file_abs_path, "w", encoding='utf8') as f:
             json.dump(translated_poll, f, ensure_ascii=False, indent=2)
 

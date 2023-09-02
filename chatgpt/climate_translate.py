@@ -81,7 +81,7 @@ LANGUAGES = {
 
 def translate_text(text: str, source_language: str, target_language: str) -> str:
   response = openai.ChatCompletion.create(
-    model="gpt-4",
+    model="gpt-3.5-turbo",
     messages=[
       {
         "role": "system",
@@ -122,7 +122,7 @@ def translate_in_all_languages(source_text: str, existing_translations: dict) ->
     if not language_code in translations:
       translation, back_translation = translate_and_back_translate(source_text, LANGUAGES[language_code])
       translations[language_code] = translation
-      translations[f"_{language_code}_back"] = back_translation
+      translations[f"{language_code}_back"] = back_translation
       print(f"{source_text}\n--------------\n{LANGUAGES[language_code]}:{translation}\n-----------------\nBack:{back_translation}\n######################")
   return translations
 

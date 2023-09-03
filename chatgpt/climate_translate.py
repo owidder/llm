@@ -180,6 +180,10 @@ def translate_polls(folder_path: str):
                     if not language_code in translated_poll["description"]:
                         translated_poll["description"] = translate_into_one_language(existing_translations=translated_poll["description"], language_code=language_code)
                         write_dict_to_json_file(file_abs_path, translated_poll)
+                    for choice_index in range(0, len(translated_poll["choices"])):
+                        if not language_code in translated_poll["choices"][choice_index]["uiStrings"]:
+                            translated_poll["choices"][choice_index]["uiStrings"] = translate_into_one_language(existing_translations=translated_poll["choices"][choice_index]["uiStrings"], language_code=language_code)
+                            write_dict_to_json_file(file_abs_path, translated_poll)
 
 
 translate_polls("./i18n/polls")

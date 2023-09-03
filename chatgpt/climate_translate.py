@@ -138,34 +138,32 @@ def translate_part(part: str, language_code: str) -> (str, str):
     return translated_part, back_part
 
 
-def translate_in_all_languages(source_text: str, existing_translations: dict) -> dict:
-    translations = existing_translations.copy()
-    for language_code in LANGUAGES.keys():
-        if not language_code in translations:
-            parts = source_text.split("<br>")
-            translated_parts = []
-            back_parts = []
+def translate_into_one_language(existing_translations: dict, language_code: str) -> dict:
+    source_text = existing_translations["de"]
+    new_translations = existing_translations.copy()
+    parts = source_text.split("<br>")
+    translated_parts = []
+    back_parts = []
 
-            for part in parts:
-                translated_part, back_part = translate_part(part=part, language_code=language_code)
-                translated_parts.append(translated_part)
-                back_parts.append(back_part)
+    for part in parts:
+        translated_part, back_part = translate_part(part=part, language_code=language_code)
+        translated_parts.append(translated_part)
+        back_parts.append(back_part)
 
-            translation = "<br>".join(translated_parts)
-            back_translation = "<br>".join(back_parts)
-            translations[language_code] = translation
-            translations[f"{language_code}_back"] = back_translation
-            print(
-                f"{source_text}\n--------------\n{LANGUAGES[language_code]}:{translation}\n-----------------\nBack:{back_translation}\n######################")
+    translation = "<br>".join(translated_parts)
+    back_translation = "<br>".join(back_parts)
+    new_translations[language_code] = translation
+    new_translations[f"{language_code}_back"] = back_translation
+    print(
+        f"{source_text}\n--------------\n{LANGUAGES[language_code]}:{translation}\n-----------------\nBack:{back_translation}\n######################")
 
-    return translations
-
-
-def translate_dict(dict_to_translate: dict) -> dict:
-    source_text = dict_to_translate["de"]
-    translations = translate_in_all_languages(source_text=source_text, existing_translations=dict_to_translate)
-    ordered_translations = collections.OrderedDict(sorted(translations.items()))
+    ordered_translations = collections.OrderedDict(sorted(new_translations.items()))
     return ordered_translations
+
+
+def write_dict_to_json_file(file_abs_path: str, dict_to_write: dict):
+    with open(file_abs_path, "w", encoding='utf8') as f:
+        json.dump(dict_to_write, f, ensure_ascii=False, indent=2)
 
 
 def translate_polls(folder_path: str):
@@ -175,11 +173,13 @@ def translate_polls(folder_path: str):
             with open(file_abs_path, "r") as f:
                 poll = json.load(f)
                 translated_poll = dict(poll).copy()
-                translated_poll["heading"] = translate_dict(poll["heading"])
-                translated_poll["description"] = translate_dict(poll["description"])
-
-            with open(file_abs_path, "w", encoding='utf8') as f:
-                json.dump(translated_poll, f, ensure_ascii=False, indent=2)
+                for language_code in LANGUAGES.keys():
+                    if not language_code in translated_poll["heading"]:
+                        translated_poll["heading"] = translate_into_one_language(existing_translations=translated_poll["heading"], language_code=language_code)
+                        write_dict_to_json_file(file_abs_path, translated_poll)
+                    if not language_code in translated_poll["description"]:
+                        translated_poll["description"] = translate_into_one_language(existing_translations=translated_poll["description"], language_code=language_code)
+                        write_dict_to_json_file(file_abs_path, translated_poll)
 
 
 translate_polls("./i18n/polls")

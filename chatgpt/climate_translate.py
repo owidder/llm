@@ -2,6 +2,7 @@ import os
 import json
 import openai
 import collections
+import argparse
 
 SOURCE_LANGUAGE = "German"
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -186,4 +187,8 @@ def translate_polls(folder_path: str):
                             write_dict_to_json_file(file_abs_path, translated_poll)
 
 
-translate_polls("./i18n/polls")
+parser = argparse.ArgumentParser()
+parser.add_argument('--path', required=True, action='store', help='Path to the files to translate')
+args = parser.parse_args()
+
+translate_polls(folder_path=args.path)

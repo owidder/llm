@@ -169,8 +169,9 @@ def write_dict_to_json_file(file_abs_path: str, dict_to_write: dict):
 
 def translate_polls(folder_path: str):
     for subdir, dirs, files in os.walk(folder_path):
-        for file in files:
+        for file in sorted(files):
             file_abs_path = subdir + os.path.sep + file
+            print(f"translating: {file_abs_path}")
             with open(file_abs_path, "r") as f:
                 poll = json.load(f)
                 translated_poll = dict(poll).copy()

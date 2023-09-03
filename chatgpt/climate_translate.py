@@ -76,7 +76,8 @@ LANGUAGES = {
     "urd": "Urdu",
     "uzb": "Uzbek",
     "vie": "Vietnamese",
-    "wel": "Welsh"
+    "wel": "Welsh",
+    "swe": "Swedish"
 }
 
 

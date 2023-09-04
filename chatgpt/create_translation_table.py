@@ -98,8 +98,8 @@ TABLE_HEAD = '''
 
 
 def start_new_table(table_name: str, source_text: str, file_to_write):
-    file_to_write.write(f"<h1>{table_name}</h1>")
-    file_to_write.write(f"<span class='source-text'>{source_text}</span>")
+    file_to_write.write(f"<h1>[{table_name}]</h1>")
+    file_to_write.write(f"<span class='source-text'>\"{source_text}\"</span>")
     file_to_write.write(f"{TABLE_HEAD}")
 
 
@@ -124,10 +124,18 @@ def add_polls(folder_path: str):
 
                     start_new_table(table_name="heading", source_text=poll["heading"]["de"], file_to_write=f)
                     add_translation_rows(translations=poll["heading"], file_to_write=f)
+                    f.write("</table>")
 
                     start_new_table(table_name="description", source_text=poll["description"]["de"], file_to_write=f)
                     add_translation_rows(translations=poll["description"], file_to_write=f)
-                    f.write("</table>\n</html>")
+                    f.write("</table>")
+
+                    for choice_index in range(0, len(poll["choices"])):
+                        start_new_table(table_name=f"opt-{choice_index+1}", source_text=poll["choices"][choice_index]["uiStrings"]["de"], file_to_write=f)
+                        add_translation_rows(translations=poll["choices"][choice_index]["uiStrings"], file_to_write=f)
+                        f.write("</table>")
+
+                    f.write("</html>")
 
 
 parser = argparse.ArgumentParser()

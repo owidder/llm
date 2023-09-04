@@ -96,6 +96,13 @@ TABLE_HEAD = '''
     </tr>
 '''
 
+
+def start_new_table(table_name: str, source_text: str, file_to_write):
+    file_to_write.write(f"<h1>{table_name}</h1>")
+    file_to_write.write(f"<span class='source-text'>{source_text}</span>")
+    file_to_write.write(f"{TABLE_HEAD}")
+
+
 def add_translation_row(translations: dict, file_to_write):
     for language_code in translations:
         if len(language_code) == 3:
@@ -114,13 +121,8 @@ def add_polls(folder_path: str):
                     poll = json.load(f)
                 with open(f"{file_abs_path}.html", "w") as f:
                     f.write(f"<html>\n<head><style>{STYLES}</style></head>")
-                    f.write("<h1>heading</h1>")
-                    f.write(f"<span class='source-text'>{poll['heading']['de']}</span>")
-                    f.write(f"{TABLE_HEAD}")
-                    for language_code in poll["heading"]:
-                        if len(language_code) == 3:
-                            back_key = f"{language_code}_back"
-                            f.write(f"<tr><td>{LANGUAGES[language_code]}</td><td>{poll['heading'][language_code]}</td><td>{poll['heading'][back_key]}</td></tr>\n")
+                    start_new_table(table_name="heading", source_text=poll["heading"]["de"], file_to_write=f)
+                    add_translation_row(translations=poll["heading"], file_to_write=f)
                     f.write("</table>\n</html>")
 
 

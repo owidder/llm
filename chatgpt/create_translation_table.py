@@ -103,7 +103,7 @@ def start_new_table(table_name: str, source_text: str, file_to_write):
     file_to_write.write(f"{TABLE_HEAD}")
 
 
-def add_translation_row(translations: dict, file_to_write):
+def add_translation_rows(translations: dict, file_to_write):
     for language_code in translations:
         if len(language_code) == 3:
             back_key = f"{language_code}_back"
@@ -121,8 +121,12 @@ def add_polls(folder_path: str):
                     poll = json.load(f)
                 with open(f"{file_abs_path}.html", "w") as f:
                     f.write(f"<html>\n<head><style>{STYLES}</style></head>")
+
                     start_new_table(table_name="heading", source_text=poll["heading"]["de"], file_to_write=f)
-                    add_translation_row(translations=poll["heading"], file_to_write=f)
+                    add_translation_rows(translations=poll["heading"], file_to_write=f)
+
+                    start_new_table(table_name="description", source_text=poll["description"]["de"], file_to_write=f)
+                    add_translation_rows(translations=poll["description"], file_to_write=f)
                     f.write("</table>\n</html>")
 
 

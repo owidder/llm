@@ -78,12 +78,16 @@ LANGUAGES = {
 
 
 STYLES = '''
-td, th {
-    border: 1px solid black;
+* {
+    font-family: "Gill Sans", sans-serif;
 }
-.source-text {
+td, th {
+    background: lightgrey;
+    padding: 0.5em;
+}
+.bold {
     font-weight: bolder;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .language {
@@ -107,13 +111,13 @@ def format(text: str) -> str:
 
 
 def start_new_table(table_name: str, file_to_write):
-    file_to_write.write(f"<h1>[{table_name}]</h1>")
+    file_to_write.write(f"<h1>{table_name}</h1>")
     file_to_write.write(f"{TABLE_HEAD}")
 
 
 def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, file_to_write):
     file_to_write.write(
-        f"<tr><td>{key}</td><td>{format(source_text)}</td><td>{format(back_translation)}</td><td>{format(translation)}</td></tr>\n")
+        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td>{format(back_translation)}</td><td>{format(translation)}</td></tr>\n")
 
 
 def add_polls(folder_path: str):
@@ -129,7 +133,7 @@ def add_polls(folder_path: str):
 
                     for language_code in LANGUAGES.keys():
                         back_key = f"{language_code}_back"
-                        start_new_table(table_name=language_code, file_to_write=f)
+                        start_new_table(table_name=LANGUAGES[language_code], file_to_write=f)
                         if language_code in poll["heading"]:
                             add_translation_row(key="heading", source_text=poll["heading"]["de"], translation=poll["heading"][language_code], back_translation=poll["heading"][back_key], file_to_write=f)
                         if language_code in poll["description"]:

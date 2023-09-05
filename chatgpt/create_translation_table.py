@@ -85,6 +85,10 @@ td, th {
     font-weight: bolder;
     font-size: 2em;
 }
+
+.language {
+    font-weight: bolder;
+}
 '''
 
 TABLE_HEAD = '''
@@ -97,9 +101,13 @@ TABLE_HEAD = '''
 '''
 
 
+def format(text: str) -> str:
+    return text.replace("<br>", "").replace("\n", "<br>")
+
+
 def start_new_table(table_name: str, source_text: str, file_to_write):
     file_to_write.write(f"<h1>[{table_name}]</h1>")
-    file_to_write.write(f"<span class='source-text'>\"{source_text}\"</span>")
+    file_to_write.write(f"<span class='source-text'>\"{format(source_text)}\"</span>")
     file_to_write.write(f"{TABLE_HEAD}")
 
 
@@ -108,7 +116,7 @@ def add_translation_rows(translations: dict, file_to_write):
         if len(language_code) == 3:
             back_key = f"{language_code}_back"
             file_to_write.write(
-                f"<tr><td>{LANGUAGES[language_code]}</td><td>{translations[language_code]}</td><td>{translations[back_key]}</td></tr>\n")
+                f"<tr><td class='language'>{LANGUAGES[language_code]}</td><td>{format(translations[language_code])}</td><td>{format(translations[back_key])}</td></tr>\n")
 
 
 def add_polls(folder_path: str):

@@ -1,6 +1,7 @@
 import json
 import os
 import argparse
+from Levenshtein import distance as levenshtein_distance
 
 
 LANGUAGES = {
@@ -101,6 +102,7 @@ TABLE_HEAD = '''
         <th>key</th>
         <th>source text</th>
         <th>back translation</th>
+        <th>distance</th>
         <th>translation</th>
     </tr>
 '''
@@ -116,8 +118,9 @@ def start_new_table(table_name: str, file_to_write):
 
 
 def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, file_to_write):
+    distance = levenshtein_distance(source_text, back_translation)
     file_to_write.write(
-        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td>{format(back_translation)}</td><td>{format(translation)}</td></tr>\n")
+        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td>{format(back_translation)}</td><td>{distance}</td><td>{format(translation)}</td></tr>\n")
 
 
 def add_polls(folder_path: str):

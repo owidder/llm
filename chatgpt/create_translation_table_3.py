@@ -119,8 +119,12 @@ def start_new_table(table_name: str, file_to_write):
 
 def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, file_to_write):
     distance = levenshtein_distance(source_text, back_translation)
+    if distance < 5:
+        background_color = f"rgba(166, 236, 153, {1 / (distance+1)})"
+    else:
+        background_color = "lightgray"
     file_to_write.write(
-        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td>{format(back_translation)}</td><td>{distance}</td><td>{format(translation)}</td></tr>\n")
+        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td style='background: {background_color}'>{format(back_translation)}</td><td>{distance}</td><td>{format(translation)}</td></tr>\n")
 
 
 def add_polls(folder_path: str):

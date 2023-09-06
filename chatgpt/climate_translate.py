@@ -171,22 +171,23 @@ def write_dict_to_json_file(file_abs_path: str, dict_to_write: dict):
 def translate_polls(folder_path: str):
     for subdir, dirs, files in os.walk(folder_path):
         for file in sorted(files):
-            file_abs_path = subdir + os.path.sep + file
-            print(f"translating: {file_abs_path}")
-            with open(file_abs_path, "r") as f:
-                poll = json.load(f)
-                translated_poll = dict(poll).copy()
-                for language_code in LANGUAGES.keys():
-                    if not language_code in translated_poll["heading"]:
-                        translated_poll["heading"] = translate_into_one_language(existing_translations=translated_poll["heading"], language_code=language_code)
-                        write_dict_to_json_file(file_abs_path, translated_poll)
-                    if not language_code in translated_poll["description"]:
-                        translated_poll["description"] = translate_into_one_language(existing_translations=translated_poll["description"], language_code=language_code)
-                        write_dict_to_json_file(file_abs_path, translated_poll)
-                    for choice_index in range(0, len(translated_poll["choices"])):
-                        if not language_code in translated_poll["choices"][choice_index]["uiStrings"]:
-                            translated_poll["choices"][choice_index]["uiStrings"] = translate_into_one_language(existing_translations=translated_poll["choices"][choice_index]["uiStrings"], language_code=language_code)
+            if file.endswith("json"):
+                file_abs_path = subdir + os.path.sep + file
+                print(f"translating: {file_abs_path}")
+                with open(file_abs_path, "r") as f:
+                    poll = json.load(f)
+                    translated_poll = dict(poll).copy()
+                    for language_code in LANGUAGES.keys():
+                        if not language_code in translated_poll["heading"]:
+                            translated_poll["heading"] = translate_into_one_language(existing_translations=translated_poll["heading"], language_code=language_code)
                             write_dict_to_json_file(file_abs_path, translated_poll)
+                        if not language_code in translated_poll["description"]:
+                            translated_poll["description"] = translate_into_one_language(existing_translations=translated_poll["description"], language_code=language_code)
+                            write_dict_to_json_file(file_abs_path, translated_poll)
+                        for choice_index in range(0, len(translated_poll["choices"])):
+                            if not language_code in translated_poll["choices"][choice_index]["uiStrings"]:
+                                translated_poll["choices"][choice_index]["uiStrings"] = translate_into_one_language(existing_translations=translated_poll["choices"][choice_index]["uiStrings"], language_code=language_code)
+                                write_dict_to_json_file(file_abs_path, translated_poll)
 
 
 parser = argparse.ArgumentParser()

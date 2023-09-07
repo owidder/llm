@@ -106,6 +106,7 @@ LANGUAGES = {
 
 
 def translate_text(text: str, source_language: str, target_language: str) -> str:
+    print(f"-----> [{target_language}] translating: {text}")
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -129,19 +130,20 @@ def translate_text(text: str, source_language: str, target_language: str) -> str
     return translation
 
 
-def check_translation(source_text: str, translation: str) -> str:
+def check_translation(source_text: str, back_translation: str) -> str:
+    print(f"-----> checking: {source_text} <-> {back_translation}")
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {
                 "role": "system",
                 "content": f"You are an expert in climate policy. You will be provided with 2 statements in German language."
-                           f"Please decide whether they have equal meanings! Only answer with Yes or No!"
+                           f"Please decide whether they have the same meaning! Only answer with Yes or No!"
             },
             {
                 "role": "user",
                 "content": f"1. {source_text}"
-                           f"2. {translation}"
+                           f"2. {back_translation}"
             }
         ],
         temperature=0,
@@ -151,6 +153,7 @@ def check_translation(source_text: str, translation: str) -> str:
         presence_penalty=0
     )
     answer = response["choices"][0]["message"]["content"]
+    print(f"--------------------> {answer}")
     return answer
 
 
@@ -234,15 +237,15 @@ def translate_polls(folder_path: str):
                 with open(file_abs_path, "r") as f:
                     poll = json.load(f)
                     translated_poll = dict(poll).copy()
-                    for language_code in LANGUAGES.keys():
-                        if not language_code in translated_poll["heading"]:
+                    for language_code in EU_LANGUAGES.keys():
+                        if not language_code in translated_poll["heading"] or not f"{language_code}_checks" in translated_poll["heading"]:
                             translated_poll["heading"] = translate_into_one_language(existing_translations=translated_poll["heading"], language_code=language_code)
                             write_dict_to_json_file(file_abs_path, translated_poll)
-                        if not language_code in translated_poll["description"]:
+                        if not language_code in translated_poll["description"] or not f"{language_code}_checks" in translated_poll["description"]:
                             translated_poll["description"] = translate_into_one_language(existing_translations=translated_poll["description"], language_code=language_code)
                             write_dict_to_json_file(file_abs_path, translated_poll)
                         for choice_index in range(0, len(translated_poll["choices"])):
-                            if not language_code in translated_poll["choices"][choice_index]["uiStrings"]:
+                            if not language_code in translated_poll["choices"][choice_index]["uiStrings"] or not f"{language_code}_checks" in translated_poll["choices"][choice_index]["uiStrings"]:
                                 translated_poll["choices"][choice_index]["uiStrings"] = translate_into_one_language(existing_translations=translated_poll["choices"][choice_index]["uiStrings"], language_code=language_code)
                                 write_dict_to_json_file(file_abs_path, translated_poll)
 

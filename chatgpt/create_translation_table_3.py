@@ -141,11 +141,8 @@ def start_new_table(table_name: str, file_to_write):
 
 
 def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, check: str, file_to_write):
-    check_formatted = check.replace(",,", ",")
-    if "No" in check_formatted:
-        background_color = "orange"
-    else:
-        background_color = "lightgreen"
+    check_formatted = "" if check == "Yes" else check
+    background_color = "lightgreen" if len(check_formatted) == 0 else "orange"
     file_to_write.write(
         f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td style='background: {background_color}'>{format(back_translation)}</td><td>{check_formatted}</td><td>{format(translation)}</td></tr>\n")
 

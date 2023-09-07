@@ -113,7 +113,7 @@ def translate_text(text: str, source_language: str, target_language: str) -> str
             {
                 "role": "system",
                 "content": f"You are an expert in climate policy. You will be provided with a text in {source_language} language."
-                           f"Please translate this text into {target_language}."
+                           f"Please translate this text into {target_language}. Please do only translate. Never add your own text"
             },
             {
                 "role": "user",
@@ -154,7 +154,7 @@ def check_translation(source_text: str, back_translation: str) -> str:
     )
     answer = response["choices"][0]["message"]["content"]
     print(f"--------------------> {answer}")
-    return answer
+    return "" if answer == "Yes" else back_translation
 
 
 def translate_and_back_translate(source_text: str, target_language: str) -> (str, str, str):
@@ -184,14 +184,15 @@ def translate_part(part: str, language_code: str) -> (str, str, str):
             translated_row, back_row, check = translate_and_back_translate(row, LANGUAGES[language_code])
             translated_rows.append(translated_row)
             back_rows.append(back_row)
-            checks.append(check)
+            if len(check) > 0:
+                checks.append(check)
         else:
             translated_rows.append('')
             back_rows.append('')
 
     translated_part = "\n".join(translated_rows)
     back_part = "\n".join(back_rows)
-    checks_str = ",".join(checks)
+    checks_str = "<br>".join(checks)
 
     return translated_part, back_part, checks_str
 
@@ -208,11 +209,12 @@ def translate_into_one_language(existing_translations: dict, language_code: str)
         translated_part, back_part, checks_str = translate_part(part=part, language_code=language_code)
         translated_parts.append(translated_part)
         back_parts.append(back_part)
-        checks_strs.append(checks_str)
+        if len(checks_str) > 0:
+            checks_strs.append(checks_str)
 
     translation = "<br>".join(translated_parts)
     back_translation = "<br>".join(back_parts)
-    checks_strs_str = ",".join(checks_strs)
+    checks_strs_str = "<br>".join(checks_strs)
     new_translations[language_code] = translation
     new_translations[f"{language_code}_back"] = back_translation
     new_translations[f"{language_code}_checks"] = checks_strs_str

@@ -230,6 +230,15 @@ def write_dict_to_json_file(file_abs_path: str, dict_to_write: dict):
         json.dump(dict_to_write, f, ensure_ascii=False, indent=2)
 
 
+def check_for_retranslate(translations: dict, language_code: str) -> bool:
+    check_key = f"{language_code}_checks"
+    if not check_key in translations:
+        return True
+    if "No" in translations[check_key] or "," in translations[check_key]:
+        return True
+    return False
+
+
 def translate_polls(folder_path: str):
     for subdir, dirs, files in os.walk(folder_path):
         for file in sorted(files):
@@ -240,14 +249,14 @@ def translate_polls(folder_path: str):
                     poll = json.load(f)
                     translated_poll = dict(poll).copy()
                     for language_code in EU_LANGUAGES.keys():
-                        if not language_code in translated_poll["heading"] or not f"{language_code}_checks" in translated_poll["heading"]:
+                        if not language_code in translated_poll["heading"] or check_for_retranslate(translated_poll["heading"], language_code):
                             translated_poll["heading"] = translate_into_one_language(existing_translations=translated_poll["heading"], language_code=language_code)
                             write_dict_to_json_file(file_abs_path, translated_poll)
-                        if not language_code in translated_poll["description"] or not f"{language_code}_checks" in translated_poll["description"]:
+                        if not language_code in translated_poll["description"] or check_for_retranslate(translated_poll["description"], language_code):
                             translated_poll["description"] = translate_into_one_language(existing_translations=translated_poll["description"], language_code=language_code)
                             write_dict_to_json_file(file_abs_path, translated_poll)
                         for choice_index in range(0, len(translated_poll["choices"])):
-                            if not language_code in translated_poll["choices"][choice_index]["uiStrings"] or not f"{language_code}_checks" in translated_poll["choices"][choice_index]["uiStrings"]:
+                            if not language_code in translated_poll["choices"][choice_index]["uiStrings"] or check_for_retranslate(translated_poll["choices"][choice_index]["uiStrings"], language_code):
                                 translated_poll["choices"][choice_index]["uiStrings"] = translate_into_one_language(existing_translations=translated_poll["choices"][choice_index]["uiStrings"], language_code=language_code)
                                 write_dict_to_json_file(file_abs_path, translated_poll)
 

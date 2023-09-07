@@ -129,7 +129,32 @@ def translate_text(text: str, source_language: str, target_language: str) -> str
     return translation
 
 
-def translate_and_back_translate(source_text: str, target_language: str) -> (str, str):
+def check_translation(source_text: str, translation: str) -> str:
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {
+                "role": "system",
+                "content": f"You are an expert in climate policy. You will be provided with 2 statements in German language."
+                           f"Please decide whether they have equal meanings! Only answer with Yes or No!"
+            },
+            {
+                "role": "user",
+                "content": f"1. {source_text}"
+                           f"2. {translation}"
+            }
+        ],
+        temperature=0,
+        max_tokens=256,
+        top_p=1,
+        frequency_penalty=0,
+        presence_penalty=0
+    )
+    answer = response["choices"][0]["message"]["content"]
+    return answer
+
+
+def translate_and_back_translate(source_text: str, target_language: str) -> (str, str, str):
     translation = translate_text(
         text=source_text,
         source_language=SOURCE_LANGUAGE,
@@ -141,27 +166,31 @@ def translate_and_back_translate(source_text: str, target_language: str) -> (str
         source_language=target_language,
         target_language=SOURCE_LANGUAGE
     )
+    check = check_translation(source_text, back_translation)
     clean_back_translation = back_translation.split("\n")[0]
-    return (clean_translation, clean_back_translation)
+    return (clean_translation, clean_back_translation, check)
 
 
-def translate_part(part: str, language_code: str) -> (str, str):
+def translate_part(part: str, language_code: str) -> (str, str, str):
     rows = part.split("\n")
     translated_rows = []
     back_rows = []
+    checks = []
     for row in rows:
         if len(row) > 0:
-            translated_row, back_row = translate_and_back_translate(row, LANGUAGES[language_code])
+            translated_row, back_row, check = translate_and_back_translate(row, LANGUAGES[language_code])
             translated_rows.append(translated_row)
             back_rows.append(back_row)
+            checks.append(check)
         else:
             translated_rows.append('')
             back_rows.append('')
 
     translated_part = "\n".join(translated_rows)
     back_part = "\n".join(back_rows)
+    checks_str = ",".join(checks)
 
-    return translated_part, back_part
+    return translated_part, back_part, checks_str
 
 
 def translate_into_one_language(existing_translations: dict, language_code: str) -> dict:
@@ -170,18 +199,22 @@ def translate_into_one_language(existing_translations: dict, language_code: str)
     parts = source_text.split("<br>")
     translated_parts = []
     back_parts = []
+    checks_strs = []
 
     for part in parts:
-        translated_part, back_part = translate_part(part=part, language_code=language_code)
+        translated_part, back_part, checks_str = translate_part(part=part, language_code=language_code)
         translated_parts.append(translated_part)
         back_parts.append(back_part)
+        checks_strs.append(checks_str)
 
     translation = "<br>".join(translated_parts)
     back_translation = "<br>".join(back_parts)
+    checks_strs_str = ",".join(checks_strs)
     new_translations[language_code] = translation
     new_translations[f"{language_code}_back"] = back_translation
+    new_translations[f"{language_code}_checks"] = checks_strs_str
     print(
-        f"{source_text}\n--------------\n{LANGUAGES[language_code]}:{translation}\n-----------------\nBack:{back_translation}\n######################")
+        f"{source_text}\n--------------\n{LANGUAGES[language_code]}:{translation}\n-----------------\nBack:{back_translation}\nChecks:{checks_strs_str}\n######################")
 
     ordered_translations = collections.OrderedDict(sorted(new_translations.items()))
     return ordered_translations

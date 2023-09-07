@@ -4,6 +4,29 @@ import argparse
 from Levenshtein import distance as levenshtein_distance
 
 
+EU_LANGUAGES = {
+    "bul": "Bulgarian",
+    "hrv": "Croatian",
+    "cze": "Czech",
+    "dan": "Danish",
+    "dut": "Dutch",
+    "est": "Estonian",
+    "fin": "Finnish",
+    "gre": "Greek",
+    "hun": "Hungarian",
+    "gle": "Irish",
+    "ita": "Italian",
+    "lav": "Latvian",
+    "lit": "Lithuanian",
+    "mlt": "Maltese",
+    "pol": "Polish",
+    "rum": "Romanian",
+    "slo": "Slovak",
+    "slv": "Slovenian",
+    "swe": "Swedish",
+    "spa": "Spanish"
+}
+
 LANGUAGES = {
     "alb": "Albanian",
     "arm": "Armenian",
@@ -102,7 +125,7 @@ TABLE_HEAD = '''
         <th>key</th>
         <th>source text</th>
         <th>back translation</th>
-        <th>distance</th>
+        <th>check</th>
         <th>translation</th>
     </tr>
 '''
@@ -117,14 +140,14 @@ def start_new_table(table_name: str, file_to_write):
     file_to_write.write(f"{TABLE_HEAD}")
 
 
-def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, file_to_write):
-    distance = levenshtein_distance(source_text, back_translation)
-    if distance < 5:
-        background_color = f"rgba(166, 236, 153, {1 / (distance+1)})"
+def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, check: str, file_to_write):
+    check_formatted = check.replace(",,", ",")
+    if "No" in check_formatted:
+        background_color = "orange"
     else:
-        background_color = "lightgray"
+        background_color = "lightgreen"
     file_to_write.write(
-        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td style='background: {background_color}'>{format(back_translation)}</td><td>{distance}</td><td>{format(translation)}</td></tr>\n")
+        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td style='background: {background_color}'>{format(back_translation)}</td><td>{check_formatted}</td><td>{format(translation)}</td></tr>\n")
 
 
 def add_polls(folder_path: str):
@@ -138,18 +161,33 @@ def add_polls(folder_path: str):
                     poll = json.load(f)
                     polls[file] = poll
 
-    with open(f"{folder_path}/translations.all.html", "w") as f:
+    with open(f"{folder_path}/translations.eu.html", "w") as f:
         f.write(f"<html>\n<head><style>{STYLES}</style></head>")
 
-        for language_code in LANGUAGES.keys():
+        for language_code in EU_LANGUAGES.keys():
             back_key = f"{language_code}_back"
-            start_new_table(table_name=LANGUAGES[language_code], file_to_write=f)
+            check_key = f"{language_code}_checks"
+            start_new_table(table_name=EU_LANGUAGES[language_code], file_to_write=f)
             for poll_file_name in polls.keys():
                 poll = polls[poll_file_name]
                 if language_code in poll["heading"]:
-                    add_translation_row(key=f"{poll_file_name}/heading", source_text=poll["heading"]["de"], translation=poll["heading"][language_code], back_translation=poll["heading"][back_key], file_to_write=f)
+                    add_translation_row(
+                        key=f"{poll_file_name}/heading",
+                        source_text=poll["heading"]["de"],
+                        translation=poll["heading"][language_code],
+                        back_translation=poll["heading"][back_key],
+                        check=poll["heading"][check_key],
+                        file_to_write=f
+                    )
                 if language_code in poll["description"]:
-                    add_translation_row(key=f"{poll_file_name}/description", source_text=poll["description"]["de"], translation=poll["description"][language_code], back_translation=poll["description"][back_key], file_to_write=f)
+                    add_translation_row(
+                        key=f"{poll_file_name}/description",
+                        source_text=poll["description"]["de"],
+                        translation=poll["description"][language_code],
+                        back_translation=poll["description"][back_key],
+                        check=poll["description"][check_key],
+                        file_to_write=f
+                    )
                 for choice_index in range(0, len(poll["choices"])):
                     if language_code in poll["choices"][choice_index]["uiStrings"]:
                         add_translation_row(
@@ -157,6 +195,7 @@ def add_polls(folder_path: str):
                             source_text=poll["choices"][choice_index]["uiStrings"]["de"],
                             translation=poll["choices"][choice_index]["uiStrings"][language_code],
                             back_translation=poll["choices"][choice_index]["uiStrings"][back_key],
+                            check=poll["choices"][choice_index]["uiStrings"][check_key],
                             file_to_write=f
                         )
             f.write("</table>")

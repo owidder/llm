@@ -7,6 +7,29 @@ import argparse
 SOURCE_LANGUAGE = "German"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+EU_LANGUAGES = {
+    "bul": "Bulgarian",
+    "hrv": "Croatian",
+    "cze": "Czech",
+    "dan": "Danish",
+    "dut": "Dutch",
+    "est": "Estonian",
+    "fin": "Finnish",
+    "gre": "Greek",
+    "hun": "Hungarian",
+    "gle": "Irish",
+    "ita": "Italian",
+    "lav": "Latvian",
+    "lit": "Lithuanian",
+    "mlt": "Maltese",
+    "pol": "Polish",
+    "rum": "Romanian",
+    "slo": "Slovak",
+    "slv": "Slovenian",
+    "swe": "Swedish",
+    "spa": "Spanish"
+}
+
 LANGUAGES = {
     "alb": "Albanian",
     "arm": "Armenian",
@@ -77,7 +100,8 @@ LANGUAGES = {
     "uzb": "Uzbek",
     "vie": "Vietnamese",
     "wel": "Welsh",
-    "swe": "Swedish"
+    "swe": "Swedish",
+    "spa": "Spanish"
 }
 
 

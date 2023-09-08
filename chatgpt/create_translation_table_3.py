@@ -171,7 +171,7 @@ def add_polls(folder_path: str):
                     poll = json.load(f)
                     polls[file] = poll
 
-    with open(f"{folder_path}/translations.eu.html", "w") as f:
+    with open(f"{folder_path}/translations.plus.html", "w") as f:
         f.write(f"<html>\n<head><style>{STYLES}</style></head>")
 
         for language_code in LANGUAGES.keys():

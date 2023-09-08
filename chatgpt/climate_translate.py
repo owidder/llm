@@ -234,7 +234,7 @@ def check_for_retranslate(translations: dict, language_code: str) -> bool:
     check_key = f"{language_code}_checks"
     if not check_key in translations:
         return True
-    if "No" in translations[check_key] or "," in translations[check_key]:
+    if "No" in translations[check_key] or "Yes," in translations[check_key]:
         return True
     return False
 

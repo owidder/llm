@@ -141,10 +141,11 @@ def start_new_table(table_name: str, file_to_write):
 
 
 def add_translation_row(key: str, source_text: str, translation: str, back_translation: str, check: str, file_to_write):
-    check_formatted = "" if check == "Yes" else check
-    background_color = "lightgreen" if len(check_formatted) == 0 else "orange"
+    distance = levenshtein_distance(source_text, back_translation)
+    check_formatted = "" if check == "Yes" or distance < 2 else check.replace("<br>", "<br><br>")
+    background_color = "rgba(166, 236, 153, .5)" if len(check_formatted) == 0 or distance < 2 else "rgba(242, 169, 59, .5)"
     file_to_write.write(
-        f"<tr><td class='bold'>{key}</td><td>{format(source_text)}</td><td style='background: {background_color}'>{format(back_translation)}</td><td>{check_formatted}</td><td>{format(translation)}</td></tr>\n")
+        f"<tr><td class='bold' style='background: {background_color}'>{key}</td><td style='background: {background_color}'>{format(source_text)}</td><td style='background: {background_color}'>{format(back_translation)}</td><td style='background: {background_color}'>{check_formatted}</td><td style='background: {background_color}'>{format(translation)}</td></tr>\n")
 
 
 def add_polls(folder_path: str):

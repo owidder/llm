@@ -27,7 +27,7 @@ EU_LANGUAGES = {
     "spa": "Spanish"
 }
 
-LANGUAGES = {
+ALL_LANGUAGES = {
     "alb": "Albanian",
     "arm": "Armenian",
     "awa": "Awadhi",
@@ -101,6 +101,18 @@ LANGUAGES = {
 }
 
 
+PLUS_LANGUAGES = {
+    "ind": "Indonesian",
+    "chi": "Chinese",
+    "kor": "Korean",
+    "jpn": "Japanese",
+}
+
+
+LANGUAGES = EU_LANGUAGES
+LANGUAGES.update(PLUS_LANGUAGES)
+
+
 STYLES = '''
 * {
     font-family: "Gill Sans", sans-serif;
@@ -162,10 +174,10 @@ def add_polls(folder_path: str):
     with open(f"{folder_path}/translations.eu.html", "w") as f:
         f.write(f"<html>\n<head><style>{STYLES}</style></head>")
 
-        for language_code in EU_LANGUAGES.keys():
+        for language_code in LANGUAGES.keys():
             back_key = f"{language_code}_back"
             check_key = f"{language_code}_checks"
-            start_new_table(table_name=EU_LANGUAGES[language_code], file_to_write=f)
+            start_new_table(table_name=LANGUAGES[language_code], file_to_write=f)
             for poll_file_name in polls.keys():
                 poll = polls[poll_file_name]
                 if language_code in poll["heading"]:

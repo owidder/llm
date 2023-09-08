@@ -30,7 +30,7 @@ EU_LANGUAGES = {
     "spa": "Spanish"
 }
 
-LANGUAGES = {
+ALL_LANGUAGES = {
     "alb": "Albanian",
     "arm": "Armenian",
     "awa": "Awadhi",
@@ -103,6 +103,17 @@ LANGUAGES = {
     "swe": "Swedish",
     "spa": "Spanish"
 }
+
+PLUS_LANGUAGES = {
+    "ind": "Indonesian",
+    "chi": "Chinese",
+    "kor": "Korean",
+    "jpn": "Japanese",
+}
+
+
+LANGUAGES = EU_LANGUAGES
+LANGUAGES.update(PLUS_LANGUAGES)
 
 
 def translate_text(text: str, source_language: str, target_language: str) -> str:
@@ -248,7 +259,7 @@ def translate_polls(folder_path: str):
                 with open(file_abs_path, "r") as f:
                     poll = json.load(f)
                     translated_poll = dict(poll).copy()
-                    for language_code in EU_LANGUAGES.keys():
+                    for language_code in LANGUAGES.keys():
                         if not language_code in translated_poll["heading"] or check_for_retranslate(translated_poll["heading"], language_code):
                             translated_poll["heading"] = translate_into_one_language(existing_translations=translated_poll["heading"], language_code=language_code)
                             write_dict_to_json_file(file_abs_path, translated_poll)

@@ -124,7 +124,7 @@ def translate_text(text: str, source_language: str, target_language: str) -> str
             {
                 "role": "system",
                 "content": f"You are an expert in climate policy. You will be provided with a text in {source_language} language."
-                           f"Please translate this text into {target_language}. Please do only translate. Never add your own text"
+                           f"Please translate this text into {target_language}. Please do only translate. Never add your own text. If your asked for your opinion, just translate the sentence"
             },
             {
                 "role": "user",
